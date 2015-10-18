@@ -1,0 +1,158 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.M5P -M 4.0
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-R2-3,7,9-10,13
+Instances:    124
+Attributes:   7
+              Cohort Size
+              DailyAverageRating
+              LevelFailedEvents
+              LevelSuccessEvents
+              Sessions
+              ActiveUsersDay7
+              MedianSessionSeconds
+Test mode:user supplied test set: size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+M5 pruned model tree:
+(using smoothed linear models)
+
+Cohort Size <= 528.5 : 
+|   LevelFailedEvents <= 28575.5 : LM1 (15/12.468%)
+|   LevelFailedEvents >  28575.5 : 
+|   |   DailyAverageRating <= 3.87 : LM2 (12/13.197%)
+|   |   DailyAverageRating >  3.87 : LM3 (23/12.722%)
+Cohort Size >  528.5 : 
+|   LevelFailedEvents <= 33693.5 : LM4 (49/22.036%)
+|   LevelFailedEvents >  33693.5 : 
+|   |   Sessions <= 26194.5 : LM5 (14/11.579%)
+|   |   Sessions >  26194.5 : 
+|   |   |   DailyAverageRating <= 4.545 : LM6 (4/7.808%)
+|   |   |   DailyAverageRating >  4.545 : 
+|   |   |   |   MedianSessionSeconds <= 440.5 : LM7 (4/7.554%)
+|   |   |   |   MedianSessionSeconds >  440.5 : LM8 (3/7.941%)
+
+LM num: 1
+ActiveUsersDay7 = 
+	3.1193 * Cohort Size 
+	+ 0.0715 * LevelFailedEvents 
+	- 0.0508 * LevelSuccessEvents 
+	+ 0.0348 * Sessions 
+	+ 0.8846 * MedianSessionSeconds 
+	+ 2272.7492
+
+LM num: 2
+ActiveUsersDay7 = 
+	2.0532 * Cohort Size 
+	+ 28.7443 * DailyAverageRating 
+	+ 0.0722 * LevelFailedEvents 
+	- 0.0855 * LevelSuccessEvents 
+	- 0.0208 * Sessions 
+	+ 1.4828 * MedianSessionSeconds 
+	+ 4134.7185
+
+LM num: 3
+ActiveUsersDay7 = 
+	2.4044 * Cohort Size 
+	+ 20.4236 * DailyAverageRating 
+	+ 0.0653 * LevelFailedEvents 
+	- 0.0754 * LevelSuccessEvents 
+	+ 0.0348 * Sessions 
+	+ 2.4716 * MedianSessionSeconds 
+	+ 2616.1299
+
+LM num: 4
+ActiveUsersDay7 = 
+	2.9235 * Cohort Size 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0287 * LevelSuccessEvents 
+	+ 0.0254 * Sessions 
+	+ 0.6461 * MedianSessionSeconds 
+	+ 4765.7781
+
+LM num: 5
+ActiveUsersDay7 = 
+	1.381 * Cohort Size 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0584 * Sessions 
+	+ 4.1354 * MedianSessionSeconds 
+	+ 4195.705
+
+LM num: 6
+ActiveUsersDay7 = 
+	1.7962 * Cohort Size 
+	+ 83.3999 * DailyAverageRating 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0622 * Sessions 
+	+ 6.545 * MedianSessionSeconds 
+	+ 2359.1752
+
+LM num: 7
+ActiveUsersDay7 = 
+	1.7962 * Cohort Size 
+	+ 72.0272 * DailyAverageRating 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0622 * Sessions 
+	+ 7.1467 * MedianSessionSeconds 
+	+ 2157.7921
+
+LM num: 8
+ActiveUsersDay7 = 
+	1.7962 * Cohort Size 
+	+ 72.0272 * DailyAverageRating 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0622 * Sessions 
+	+ 7.1953 * MedianSessionSeconds 
+	+ 2140.9152
+
+Number of Rules : 8
+
+Time taken to build model: 0.02 seconds
+
+=== Predictions on test split ===
+
+inst#,    actual, predicted, error
+     1   5562       5983.401    421.401
+     2   5701       6103.138    402.138
+     3   5347       5815.858    468.858
+     4   5227       5697.623    470.623
+     5   5096       5470.93     374.93 
+     6   5087       5631.185    544.185
+     7   4961       5331.612    370.612
+     8   5068       5277.803    209.803
+     9   5115       5353.139    238.139
+    10   4982       5180.336    198.336
+    11   4902       5110.484    208.484
+    12   4697       4994.271    297.271
+    13   4702       5006.657    304.657
+    14   4728       4903.83     175.83 
+    15   4787       4975.107    188.107
+    16   4803       5111.96     308.96 
+    17   4554       4905.022    351.022
+    18   4486       4936.759    450.759
+    19   4451       4795.573    344.573
+    20   4451       4788.869    337.869
+    21   4387       4798.126    411.126
+    22   4327       4975.591    648.591
+    23   4458       4936.133    478.133
+    24   4325       4765.342    440.342
+    25   4131       4757.287    626.287
+    26   4055       4815.682    760.682
+    27   3907       4750        843    
+    28   3968       4695.018    727.018
+
+=== Evaluation on test set ===
+=== Summary ===
+
+Correlation coefficient                  0.9255
+Mean absolute error                    414.3477
+Root mean squared error                449.7107
+Relative absolute error                 15.3616 %
+Root relative squared error             16.4411 %
+Total Number of Instances               28     
+

@@ -1,0 +1,254 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.M5P -M 4.0
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-R2-3,7,9-10,13
+Instances:    124
+Attributes:   7
+              Cohort Size
+              DailyAverageRating
+              LevelFailedEvents
+              LevelSuccessEvents
+              Sessions
+              ActiveUsersDay7
+              MedianSessionSeconds
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+M5 pruned model tree:
+(using smoothed linear models)
+
+Cohort Size <= 528.5 : 
+|   LevelFailedEvents <= 28575.5 : LM1 (15/12.468%)
+|   LevelFailedEvents >  28575.5 : 
+|   |   DailyAverageRating <= 3.87 : LM2 (12/13.197%)
+|   |   DailyAverageRating >  3.87 : LM3 (23/12.722%)
+Cohort Size >  528.5 : 
+|   LevelFailedEvents <= 33693.5 : LM4 (49/22.036%)
+|   LevelFailedEvents >  33693.5 : 
+|   |   Sessions <= 26194.5 : LM5 (14/11.579%)
+|   |   Sessions >  26194.5 : 
+|   |   |   DailyAverageRating <= 4.545 : LM6 (4/7.808%)
+|   |   |   DailyAverageRating >  4.545 : 
+|   |   |   |   MedianSessionSeconds <= 440.5 : LM7 (4/7.554%)
+|   |   |   |   MedianSessionSeconds >  440.5 : LM8 (3/7.941%)
+
+LM num: 1
+ActiveUsersDay7 = 
+	3.1193 * Cohort Size 
+	+ 0.0715 * LevelFailedEvents 
+	- 0.0508 * LevelSuccessEvents 
+	+ 0.0348 * Sessions 
+	+ 0.8846 * MedianSessionSeconds 
+	+ 2272.7492
+
+LM num: 2
+ActiveUsersDay7 = 
+	2.0532 * Cohort Size 
+	+ 28.7443 * DailyAverageRating 
+	+ 0.0722 * LevelFailedEvents 
+	- 0.0855 * LevelSuccessEvents 
+	- 0.0208 * Sessions 
+	+ 1.4828 * MedianSessionSeconds 
+	+ 4134.7185
+
+LM num: 3
+ActiveUsersDay7 = 
+	2.4044 * Cohort Size 
+	+ 20.4236 * DailyAverageRating 
+	+ 0.0653 * LevelFailedEvents 
+	- 0.0754 * LevelSuccessEvents 
+	+ 0.0348 * Sessions 
+	+ 2.4716 * MedianSessionSeconds 
+	+ 2616.1299
+
+LM num: 4
+ActiveUsersDay7 = 
+	2.9235 * Cohort Size 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0287 * LevelSuccessEvents 
+	+ 0.0254 * Sessions 
+	+ 0.6461 * MedianSessionSeconds 
+	+ 4765.7781
+
+LM num: 5
+ActiveUsersDay7 = 
+	1.381 * Cohort Size 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0584 * Sessions 
+	+ 4.1354 * MedianSessionSeconds 
+	+ 4195.705
+
+LM num: 6
+ActiveUsersDay7 = 
+	1.7962 * Cohort Size 
+	+ 83.3999 * DailyAverageRating 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0622 * Sessions 
+	+ 6.545 * MedianSessionSeconds 
+	+ 2359.1752
+
+LM num: 7
+ActiveUsersDay7 = 
+	1.7962 * Cohort Size 
+	+ 72.0272 * DailyAverageRating 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0622 * Sessions 
+	+ 7.1467 * MedianSessionSeconds 
+	+ 2157.7921
+
+LM num: 8
+ActiveUsersDay7 = 
+	1.7962 * Cohort Size 
+	+ 72.0272 * DailyAverageRating 
+	+ 0.0102 * LevelFailedEvents 
+	- 0.0236 * LevelSuccessEvents 
+	+ 0.0622 * Sessions 
+	+ 7.1953 * MedianSessionSeconds 
+	+ 2140.9152
+
+Number of Rules : 8
+
+Time taken to build model: 0.02 seconds
+
+=== Predictions on test data ===
+
+inst#,    actual, predicted, error
+     1   7312       7346.815     34.815
+     2   6456       6541.525     85.525
+     3   7650       7466.877   -183.123
+     4   6126       6232.511    106.511
+     5   6238       6379.542    141.542
+     6   7816       7627.884   -188.116
+     7   7632       7443.922   -188.078
+     8   7611       7565.663    -45.337
+     9   6757       6538.14    -218.86 
+    10   6829       6450.628   -378.372
+    11   7836       7486.74    -349.26 
+    12   7490       8033.131    543.131
+    13   9002       8673.877   -328.123
+     1   8926       8717.399   -208.601
+     2   7428       7854.864    426.864
+     3   7483       7676.736    193.736
+     4   9084       9372.089    288.089
+     5   7715       7523.903   -191.097
+     6   6072       5815.045   -256.955
+     7   5792       5993.476    201.476
+     8   7066       7149.242     83.242
+     9   7518       7693.016    175.016
+    10   7179       7764.805    585.805
+    11   8570       9087.294    517.294
+    12   6308       6108.039   -199.961
+    13   6286       6485.901    199.901
+     1   7659       8299.801    640.801
+     2   6101       6146.305     45.305
+     3   7820       7649.159   -170.841
+     4   6631       6677.605     46.605
+     5   9014       8696.073   -317.927
+     6   9049       8993.444    -55.556
+     7   6465       6525.998     60.998
+     8   5760       5935.043    175.043
+     9   6511       6492.346    -18.654
+    10   7882       8156.831    274.831
+    11   5917       6616.374    699.374
+    12   5928       5920.336     -7.664
+    13   8356       8728.204    372.204
+     1   8890       9231.929    341.929
+     2   7315       7492.49     177.49 
+     3   8278       8617.624    339.624
+     4   8794       8786.806     -7.194
+     5   7643       7644.261      1.261
+     6   7645       7370.536   -274.464
+     7   5881       6236.055    355.055
+     8   9387       9040.148   -346.852
+     9   6933       7170.499    237.499
+    10   8533       8026.437   -506.563
+    11   8872       8801.687    -70.313
+    12   6342       6301.133    -40.867
+    13   7418       7687.383    269.383
+     1   7897       7712.391   -184.609
+     2   9261       9413.498    152.498
+     3   8438       8185.707   -252.293
+     4   7482       7361.622   -120.378
+     5   7461       6377.538  -1083.462
+     6   6558       6532.329    -25.671
+     7   7802       7779.653    -22.347
+     8   7645       7814.196    169.196
+     9   6084       5918.917   -165.083
+    10   7292       7171.846   -120.154
+    11   6281       6732.664    451.664
+    12   6731       6490.69    -240.31 
+     1   6110       6228.132    118.132
+     2   6733       6408.406   -324.594
+     3   8644       8783.692    139.692
+     4   8023       8632.991    609.991
+     5   6899       6734.175   -164.825
+     6   8863       8640.299   -222.701
+     7   7234       7457.235    223.235
+     8   7336       7564.604    228.604
+     9   6548       6457.678    -90.322
+    10   6940       6729.692   -210.308
+    11   7477       7717.966    240.966
+    12   8901       8752.135   -148.865
+     1   7459       7803.09     344.09 
+     2   6451       6321.824   -129.176
+     3   6204       6409.521    205.521
+     4   7425       7564.502    139.502
+     5   9110       9153.333     43.333
+     6   8700       8940.427    240.427
+     7   5975       6298.217    323.217
+     8   7878       7686.451   -191.549
+     9   6894       6672.454   -221.546
+    10   7758       7539.329   -218.671
+    11   7106       7331.448    225.448
+    12   7496       7390.159   -105.841
+     1   7269       7819.579    550.579
+     2   8858       8647.899   -210.101
+     3   6923       6886.37     -36.63 
+     4   5625       5799.693    174.693
+     5   8411       8256.427   -154.573
+     6   6631       6693.42      62.42 
+     7   7331       7302.879    -28.121
+     8   6552       6735.08     183.08 
+     9   8996       8823.87    -172.13 
+    10   7817       7827.28      10.28 
+    11   7491       7306.537   -184.463
+    12   5767       6036.932    269.932
+     1   6510       6437.781    -72.219
+     2   6536       6451.602    -84.398
+     3   8912       8656.446   -255.554
+     4   7678       7735.544     57.544
+     5   6580       6528.997    -51.003
+     6   7451       7424.252    -26.748
+     7   9086       8795.092   -290.908
+     8   6682       6454.751   -227.249
+     9   9220       8661.415   -558.585
+    10   9157       8876.55    -280.45 
+    11   6798       6718.869    -79.131
+    12   7486       7590.599    104.599
+     1   7203       7341.814    138.814
+     2   9535       8952.912   -582.088
+     3   5545       5702.919    157.919
+     4   6272       6151.003   -120.997
+     5   6377       6491.743    114.743
+     6   7383       7287.465    -95.535
+     7   6792       6782.999     -9.001
+     8   8999       9130.075    131.075
+     9   6889       6732.955   -156.045
+    10   6772       6730.623    -41.377
+    11   6797       6686.738   -110.262
+    12   9577       8943.741   -633.259
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.9632
+Mean absolute error                    215.2246
+Root mean squared error                276.0284
+Relative absolute error                 25.6367 %
+Root relative squared error             26.7838 %
+Total Number of Instances              124     
+
