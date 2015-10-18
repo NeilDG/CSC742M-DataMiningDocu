@@ -1,0 +1,40 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.ClassifierSubsetEval -B weka.classifiers.trees.J48 -T -H "Click to set hold out or test instances" -- -C 0.25 -M 2
+Search:weka.attributeSelection.GeneticSearch -Z 200 -G 1000 -C 0.6 -M 0.033 -R 20 -S 1
+Relation:     JNC Dataset Android 0511-0911-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-R17-weka.filters.unsupervised.attribute.Remove-R3-8-weka.filters.unsupervised.attribute.Discretize-B5-M-1.0-R11
+Instances:    124
+Attributes:   13
+              Cohort Size
+              Day 1
+              CrashesANRDay1
+              DailyAverageRating
+              LevelFailedEvents
+              LevelSuccessEvents
+              LevelPlayedEvents
+              Sessions
+              MKTExpenses
+              TotalPurchases
+              ActiveUsersDay7
+              MedianSessionSeconds
+              AvgSessionSeconds
+Evaluation mode:10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation (stratified), seed: 1 ===
+
+number of folds (%)  attribute
+           8( 80 %)    1 Cohort Size
+           2( 20 %)    2 Day 1
+           2( 20 %)    3 CrashesANRDay1
+           5( 50 %)    4 DailyAverageRating
+           5( 50 %)    5 LevelFailedEvents
+           4( 40 %)    6 LevelSuccessEvents
+           5( 50 %)    7 LevelPlayedEvents
+           6( 60 %)    8 Sessions
+           2( 20 %)    9 MKTExpenses
+           3( 30 %)   10 TotalPurchases
+           9( 90 %)   12 MedianSessionSeconds
+           3( 30 %)   13 AvgSessionSeconds
+
