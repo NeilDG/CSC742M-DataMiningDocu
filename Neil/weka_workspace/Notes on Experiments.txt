@@ -1,0 +1,13 @@
+- DNC achieved best accuracy in m5Base Result 2 using BestFirst selection of attributes. 
+Correlation coefficient                  0.6711
+Mean absolute error                    341.8196
+Root mean squared error                590.2632
+Relative absolute error                 59.8406 %
+Root relative squared error             74.4042 %
+
+-DNC achieved the following results from actual test data in m5Base pruned
+Correlation coefficient                  0.808 
+Mean absolute error                    296.3802
+Root mean squared error                299.8047
+Relative absolute error                 29.2745 %
+Root relative squared error             29.5595 %
