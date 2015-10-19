@@ -11,3 +11,21 @@ Mean absolute error                    296.3802
 Root mean squared error                299.8047
 Relative absolute error                 29.2745 %
 Root relative squared error             29.5595 %
+
+-DNC performs slightly good for J48. 78% accuracy unfiltered attribute selection.
+Correctly Classified Instances          97               78.2258 %
+Incorrectly Classified Instances        27               21.7742 %
+Kappa statistic                          0.6651
+Mean absolute error                      0.119 
+Root mean squared error                  0.3203
+Relative absolute error                 36.0752 %
+Root relative squared error             79.021  %
+
+-Using correlation-based feature selection, DNC accuracy jumped to 79%
+Correctly Classified Instances          99               79.8387 %
+Incorrectly Classified Instances        25               20.1613 %
+Kappa statistic                          0.6883
+Mean absolute error                      0.1118
+Root mean squared error                  0.3073
+Relative absolute error                 33.8827 %
+Root relative squared error             75.8167 %
