@@ -1,7 +1,7 @@
 === Run information ===
 
 Scheme:weka.classifiers.trees.M5P -N -M 4.0
-Relation:     DNC Dataset Android 0511-0911-weka.filters.unsupervised.attribute.Remove-R1,18-weka.filters.unsupervised.attribute.Remove-R3-8-weka.filters.unsupervised.attribute.Remove-R2-5,7,10,12-13
+Relation:     DNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-R2-5,7,10,12-13
 Instances:    124
 Attributes:   5
               Cohort Size
@@ -16,384 +16,358 @@ Test mode:10-fold cross-validation
 M5 unpruned model tree:
 (using smoothed linear models)
 
-Cohort Size <= 153 : 
+Sessions <= 3077.5 : 
 |   MKTExpenses <= 3.6 : 
 |   |   LevelSuccessEvents <= 1290 : LM1 (6/2.317%)
 |   |   LevelSuccessEvents >  1290 : 
 |   |   |   LevelSuccessEvents <= 1842.5 : LM2 (8/3.5%)
 |   |   |   LevelSuccessEvents >  1842.5 : LM3 (3/2.055%)
 |   MKTExpenses >  3.6 : 
-|   |   Cohort Size <= 70 : LM4 (5/3.822%)
-|   |   Cohort Size >  70 : 
-|   |   |   LevelSuccessEvents <= 1999 : LM5 (2/1.141%)
-|   |   |   LevelSuccessEvents >  1999 : LM6 (5/3.678%)
-Cohort Size >  153 : 
-|   Sessions <= 5554 : 
-|   |   Sessions <= 3845.5 : 
-|   |   |   MKTExpenses <= 68.4 : 
-|   |   |   |   MKTExpenses <= 50.28 : 
-|   |   |   |   |   Cohort Size <= 171.5 : LM7 (2/72.558%)
-|   |   |   |   |   Cohort Size >  171.5 : 
-|   |   |   |   |   |   Sessions <= 1987.5 : LM8 (2/7.731%)
-|   |   |   |   |   |   Sessions >  1987.5 : LM9 (3/27.948%)
-|   |   |   |   MKTExpenses >  50.28 : LM10 (4/3.968%)
-|   |   |   MKTExpenses >  68.4 : 
-|   |   |   |   LevelSuccessEvents <= 5429.5 : 
-|   |   |   |   |   LevelSuccessEvents <= 4348 : 
-|   |   |   |   |   |   Cohort Size <= 268 : LM11 (3/28.881%)
-|   |   |   |   |   |   Cohort Size >  268 : 
-|   |   |   |   |   |   |   LevelSuccessEvents <= 4218 : LM12 (6/4.334%)
-|   |   |   |   |   |   |   LevelSuccessEvents >  4218 : LM13 (2/0.824%)
-|   |   |   |   |   LevelSuccessEvents >  4348 : LM14 (10/4.951%)
-|   |   |   |   LevelSuccessEvents >  5429.5 : 
-|   |   |   |   |   LevelSuccessEvents <= 7322 : 
-|   |   |   |   |   |   Sessions <= 2869.5 : 
-|   |   |   |   |   |   |   Cohort Size <= 544.5 : LM15 (2/4.056%)
-|   |   |   |   |   |   |   Cohort Size >  544.5 : LM16 (2/1.394%)
-|   |   |   |   |   |   Sessions >  2869.5 : 
-|   |   |   |   |   |   |   Sessions <= 3301.5 : LM17 (4/3.76%)
-|   |   |   |   |   |   |   Sessions >  3301.5 : 
-|   |   |   |   |   |   |   |   LevelSuccessEvents <= 5985 : LM18 (2/5.006%)
-|   |   |   |   |   |   |   |   LevelSuccessEvents >  5985 : LM19 (2/3.485%)
-|   |   |   |   |   LevelSuccessEvents >  7322 : 
-|   |   |   |   |   |   Cohort Size <= 828.5 : LM20 (2/1.141%)
-|   |   |   |   |   |   Cohort Size >  828.5 : 
-|   |   |   |   |   |   |   Cohort Size <= 1107.5 : LM21 (2/0.19%)
-|   |   |   |   |   |   |   Cohort Size >  1107.5 : LM22 (3/11.343%)
-|   |   Sessions >  3845.5 : 
-|   |   |   Cohort Size <= 268 : 
-|   |   |   |   LevelSuccessEvents <= 3385 : 
-|   |   |   |   |   LevelSuccessEvents <= 2599.5 : 
-|   |   |   |   |   |   Sessions <= 4635.5 : LM23 (2/3.295%)
-|   |   |   |   |   |   Sessions >  4635.5 : LM24 (2/0.887%)
-|   |   |   |   |   LevelSuccessEvents >  2599.5 : LM25 (4/3.923%)
-|   |   |   |   LevelSuccessEvents >  3385 : 
-|   |   |   |   |   Sessions <= 4609 : 
-|   |   |   |   |   |   MKTExpenses <= 73.15 : LM26 (3/39.981%)
-|   |   |   |   |   |   MKTExpenses >  73.15 : LM27 (3/6.663%)
-|   |   |   |   |   Sessions >  4609 : LM28 (2/2.598%)
-|   |   |   Cohort Size >  268 : 
-|   |   |   |   MKTExpenses <= 97.525 : LM29 (6/4.57%)
-|   |   |   |   MKTExpenses >  97.525 : LM30 (2/1.014%)
-|   Sessions >  5554 : 
-|   |   Sessions <= 7244 : 
-|   |   |   Cohort Size <= 205.5 : LM31 (2/0.57%)
-|   |   |   Cohort Size >  205.5 : 
-|   |   |   |   LevelSuccessEvents <= 3181.5 : LM32 (2/7.097%)
-|   |   |   |   LevelSuccessEvents >  3181.5 : LM33 (5/3.124%)
-|   |   Sessions >  7244 : 
-|   |   |   Cohort Size <= 1175 : 
-|   |   |   |   LevelSuccessEvents <= 3588.5 : 
-|   |   |   |   |   Cohort Size <= 271 : LM34 (2/1.394%)
-|   |   |   |   |   Cohort Size >  271 : LM35 (3/18.521%)
-|   |   |   |   LevelSuccessEvents >  3588.5 : LM36 (2/12.294%)
-|   |   |   Cohort Size >  1175 : 
-|   |   |   |   LevelSuccessEvents <= 12130.5 : LM37 (2/18.884%)
-|   |   |   |   LevelSuccessEvents >  12130.5 : LM38 (2/11.977%)
+|   |   MKTExpenses <= 57.4 : 
+|   |   |   LevelSuccessEvents <= 1999 : LM4 (2/1.141%)
+|   |   |   LevelSuccessEvents >  1999 : LM5 (7/3.216%)
+|   |   MKTExpenses >  57.4 : 
+|   |   |   MKTExpenses <= 70.8 : LM6 (2/2.788%)
+|   |   |   MKTExpenses >  70.8 : LM7 (5/1.62%)
+Sessions >  3077.5 : 
+|   MKTExpenses <= 86.685 : 
+|   |   MKTExpenses <= 78.8 : 
+|   |   |   MKTExpenses <= 53.14 : 
+|   |   |   |   Cohort Size <= 177 : LM8 (3/3.14%)
+|   |   |   |   Cohort Size >  177 : 
+|   |   |   |   |   LevelSuccessEvents <= 2699.5 : LM9 (2/25.982%)
+|   |   |   |   |   LevelSuccessEvents >  2699.5 : LM10 (2/12.23%)
+|   |   |   MKTExpenses >  53.14 : 
+|   |   |   |   LevelSuccessEvents <= 4132 : 
+|   |   |   |   |   LevelSuccessEvents <= 3105.5 : 
+|   |   |   |   |   |   LevelSuccessEvents <= 2611.5 : 
+|   |   |   |   |   |   |   Cohort Size <= 241.5 : LM11 (2/14.131%)
+|   |   |   |   |   |   |   Cohort Size >  241.5 : LM12 (2/2.091%)
+|   |   |   |   |   |   LevelSuccessEvents >  2611.5 : LM13 (2/2.028%)
+|   |   |   |   |   LevelSuccessEvents >  3105.5 : 
+|   |   |   |   |   |   LevelSuccessEvents <= 3679.5 : LM14 (2/7.985%)
+|   |   |   |   |   |   LevelSuccessEvents >  3679.5 : LM15 (3/14.55%)
+|   |   |   |   LevelSuccessEvents >  4132 : 
+|   |   |   |   |   LevelSuccessEvents <= 6566.5 : 
+|   |   |   |   |   |   Cohort Size <= 254.5 : LM16 (2/0.634%)
+|   |   |   |   |   |   Cohort Size >  254.5 : 
+|   |   |   |   |   |   |   LevelSuccessEvents <= 5429.5 : 
+|   |   |   |   |   |   |   |   MKTExpenses <= 72.4 : LM17 (3/7.993%)
+|   |   |   |   |   |   |   |   MKTExpenses >  72.4 : LM18 (2/0.57%)
+|   |   |   |   |   |   |   LevelSuccessEvents >  5429.5 : LM19 (2/0.444%)
+|   |   |   |   |   LevelSuccessEvents >  6566.5 : LM20 (4/3.811%)
+|   |   MKTExpenses >  78.8 : 
+|   |   |   Cohort Size <= 253.5 : 
+|   |   |   |   Sessions <= 3982.5 : LM21 (3/3.355%)
+|   |   |   |   Sessions >  3982.5 : LM22 (2/45.816%)
+|   |   |   Cohort Size >  253.5 : 
+|   |   |   |   LevelSuccessEvents <= 3841 : 
+|   |   |   |   |   LevelSuccessEvents <= 3341 : 
+|   |   |   |   |   |   Cohort Size <= 270 : LM23 (2/1.394%)
+|   |   |   |   |   |   Cohort Size >  270 : LM24 (2/8.872%)
+|   |   |   |   |   LevelSuccessEvents >  3341 : 
+|   |   |   |   |   |   LevelSuccessEvents <= 3588.5 : LM25 (3/18.521%)
+|   |   |   |   |   |   LevelSuccessEvents >  3588.5 : LM26 (2/12.294%)
+|   |   |   |   LevelSuccessEvents >  3841 : 
+|   |   |   |   |   Sessions <= 4610 : LM27 (3/1.745%)
+|   |   |   |   |   Sessions >  4610 : 
+|   |   |   |   |   |   Cohort Size <= 1875.5 : LM28 (3/85.51%)
+|   |   |   |   |   |   Cohort Size >  1875.5 : LM29 (3/28.04%)
+|   MKTExpenses >  86.685 : 
+|   |   LevelSuccessEvents <= 5586.5 : 
+|   |   |   Sessions <= 3923 : LM30 (7/3.894%)
+|   |   |   Sessions >  3923 : 
+|   |   |   |   LevelSuccessEvents <= 4218 : LM31 (8/4.148%)
+|   |   |   |   LevelSuccessEvents >  4218 : LM32 (8/4.75%)
+|   |   LevelSuccessEvents >  5586.5 : 
+|   |   |   Cohort Size <= 829.5 : 
+|   |   |   |   MKTExpenses <= 100.035 : LM33 (2/0.127%)
+|   |   |   |   MKTExpenses >  100.035 : 
+|   |   |   |   |   Sessions <= 7125.5 : LM34 (2/1.014%)
+|   |   |   |   |   Sessions >  7125.5 : 
+|   |   |   |   |   |   Cohort Size <= 619 : LM35 (3/10.385%)
+|   |   |   |   |   |   Cohort Size >  619 : LM36 (2/11.85%)
+|   |   |   Cohort Size >  829.5 : 
+|   |   |   |   LevelSuccessEvents <= 9188 : LM37 (3/2.246%)
+|   |   |   |   LevelSuccessEvents >  9188 : LM38 (2/1.964%)
 
 LM num: 1
 ActiveUsersDay7 = 
-	0.3613 * Cohort Size 
-	+ 0.093 * LevelSuccessEvents 
-	+ 0.0493 * Sessions 
-	+ 2.3951 * MKTExpenses 
-	+ 388.381
+	0.2005 * Cohort Size 
+	+ 0.0858 * LevelSuccessEvents 
+	+ 1.859 * MKTExpenses 
+	+ 687.4059
 
 LM num: 2
 ActiveUsersDay7 = 
-	0.3613 * Cohort Size 
-	+ 0.0978 * LevelSuccessEvents 
-	+ 0.0493 * Sessions 
-	+ 2.3951 * MKTExpenses 
-	+ 388.7446
+	0.2005 * Cohort Size 
+	+ 0.0908 * LevelSuccessEvents 
+	+ 1.859 * MKTExpenses 
+	+ 687.785
 
 LM num: 3
 ActiveUsersDay7 = 
-	0.3613 * Cohort Size 
-	+ 0.1014 * LevelSuccessEvents 
-	+ 0.0493 * Sessions 
-	+ 2.3951 * MKTExpenses 
-	+ 385.6368
+	0.2005 * Cohort Size 
+	+ 0.0946 * LevelSuccessEvents 
+	+ 1.859 * MKTExpenses 
+	+ 684.5433
 
 LM num: 4
 ActiveUsersDay7 = 
-	-0.1259 * Cohort Size 
-	+ 0.0499 * LevelSuccessEvents 
-	+ 0.0493 * Sessions 
-	+ 2.6878 * MKTExpenses 
-	+ 613.0802
+	0.2005 * Cohort Size 
+	+ 0.0806 * LevelSuccessEvents 
+	+ 2.5557 * MKTExpenses 
+	+ 742.2981
 
 LM num: 5
 ActiveUsersDay7 = 
-	-0.073 * Cohort Size 
-	+ 0.0766 * LevelSuccessEvents 
-	+ 0.0493 * Sessions 
-	+ 2.6878 * MKTExpenses 
-	+ 524.1388
+	0.2005 * Cohort Size 
+	+ 0.0718 * LevelSuccessEvents 
+	+ 2.5557 * MKTExpenses 
+	+ 764.8646
 
 LM num: 6
 ActiveUsersDay7 = 
-	-0.073 * Cohort Size 
-	+ 0.0726 * LevelSuccessEvents 
-	+ 0.0493 * Sessions 
-	+ 2.6878 * MKTExpenses 
-	+ 535.008
+	0.2005 * Cohort Size 
+	+ 0.0421 * LevelSuccessEvents 
+	+ 2.7058 * MKTExpenses 
+	+ 850.3169
 
 LM num: 7
 ActiveUsersDay7 = 
-	-0.1136 * Cohort Size 
-	+ 0.0655 * LevelSuccessEvents 
-	+ 0.1435 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1156.6555
+	0.2005 * Cohort Size 
+	+ 0.0421 * LevelSuccessEvents 
+	+ 2.6922 * MKTExpenses 
+	+ 853.2535
 
 LM num: 8
 ActiveUsersDay7 = 
-	-0.1136 * Cohort Size 
-	+ 0.0655 * LevelSuccessEvents 
-	+ 0.1117 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1227.7645
+	1.0288 * Cohort Size 
+	+ 0.0685 * LevelSuccessEvents 
+	- 13.4649 * MKTExpenses 
+	+ 2107.4843
 
 LM num: 9
 ActiveUsersDay7 = 
-	-0.1136 * Cohort Size 
-	+ 0.0655 * LevelSuccessEvents 
-	+ 0.1117 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1228.1447
+	0.9691 * Cohort Size 
+	+ 0.0685 * LevelSuccessEvents 
+	- 13.4649 * MKTExpenses 
+	+ 2127.4419
 
 LM num: 10
 ActiveUsersDay7 = 
-	-0.1136 * Cohort Size 
-	+ 0.0655 * LevelSuccessEvents 
-	- 0.0685 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1563.7516
+	0.9691 * Cohort Size 
+	+ 0.0685 * LevelSuccessEvents 
+	- 13.4649 * MKTExpenses 
+	+ 2127.4901
 
 LM num: 11
 ActiveUsersDay7 = 
-	0.2085 * Cohort Size 
-	+ 0.0964 * LevelSuccessEvents 
-	- 0.0459 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1084.9648
+	-0.0592 * Cohort Size 
+	+ 0.0532 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1731.5973
 
 LM num: 12
 ActiveUsersDay7 = 
-	0.161 * Cohort Size 
-	+ 0.0964 * LevelSuccessEvents 
-	- 0.0459 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1102.2264
+	-0.0592 * Cohort Size 
+	+ 0.0532 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1731.619
 
 LM num: 13
 ActiveUsersDay7 = 
-	0.161 * Cohort Size 
-	+ 0.0964 * LevelSuccessEvents 
-	- 0.0459 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1102.6034
+	-0.0776 * Cohort Size 
+	+ 0.0532 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1735.6112
 
 LM num: 14
 ActiveUsersDay7 = 
-	-0.0042 * Cohort Size 
-	+ 0.097 * LevelSuccessEvents 
-	- 0.0459 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1160.3966
+	-0.0776 * Cohort Size 
+	+ 0.0745 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1644.5928
 
 LM num: 15
 ActiveUsersDay7 = 
-	-0.1708 * Cohort Size 
-	+ 0.0913 * LevelSuccessEvents 
-	- 0.0714 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1362.529
+	-0.0776 * Cohort Size 
+	+ 0.0733 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1650.3732
 
 LM num: 16
 ActiveUsersDay7 = 
-	-0.1708 * Cohort Size 
-	+ 0.0913 * LevelSuccessEvents 
-	- 0.0714 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1362.2553
+	-0.0334 * Cohort Size 
+	+ 0.0781 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1717.0003
 
 LM num: 17
 ActiveUsersDay7 = 
-	-0.154 * Cohort Size 
-	+ 0.0927 * LevelSuccessEvents 
-	- 0.0627 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1313.5664
+	-0.0334 * Cohort Size 
+	+ 0.0781 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1718.1566
 
 LM num: 18
 ActiveUsersDay7 = 
-	-0.154 * Cohort Size 
-	+ 0.0927 * LevelSuccessEvents 
-	- 0.0627 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1314.2607
+	-0.0334 * Cohort Size 
+	+ 0.0781 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1718.1567
 
 LM num: 19
 ActiveUsersDay7 = 
-	-0.154 * Cohort Size 
-	+ 0.0927 * LevelSuccessEvents 
-	- 0.0627 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1314.3248
+	-0.0334 * Cohort Size 
+	+ 0.0785 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1716.8216
 
 LM num: 20
 ActiveUsersDay7 = 
-	-0.154 * Cohort Size 
-	+ 0.0934 * LevelSuccessEvents 
-	- 0.077 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1379.9608
+	-0.0243 * Cohort Size 
+	+ 0.0697 * LevelSuccessEvents 
+	- 7.5081 * MKTExpenses 
+	+ 1770.0899
 
 LM num: 21
 ActiveUsersDay7 = 
-	-0.157 * Cohort Size 
-	+ 0.0934 * LevelSuccessEvents 
-	- 0.077 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1386.191
+	0.6076 * Cohort Size 
+	- 0.0611 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1888.3445
 
 LM num: 22
 ActiveUsersDay7 = 
-	-0.1568 * Cohort Size 
-	+ 0.0934 * LevelSuccessEvents 
-	- 0.077 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 1385.9199
+	0.6076 * Cohort Size 
+	- 0.0604 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1886.2844
 
 LM num: 23
 ActiveUsersDay7 = 
-	0.7654 * Cohort Size 
-	+ 0.047 * LevelSuccessEvents 
-	+ 0.0068 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 780.1525
+	-1.2605 * Cohort Size 
+	+ 0.2079 * LevelSuccessEvents 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1830.2258
 
 LM num: 24
 ActiveUsersDay7 = 
-	0.7654 * Cohort Size 
-	+ 0.047 * LevelSuccessEvents 
-	+ 0.0068 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 779.9792
+	-1.2605 * Cohort Size 
+	+ 0.2079 * LevelSuccessEvents 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1825.2958
 
 LM num: 25
 ActiveUsersDay7 = 
-	0.7654 * Cohort Size 
-	+ 0.047 * LevelSuccessEvents 
-	+ 0.0089 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 768.3144
+	0.4827 * Cohort Size 
+	+ 0.1975 * LevelSuccessEvents 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1421.6751
 
 LM num: 26
 ActiveUsersDay7 = 
-	0.7654 * Cohort Size 
-	+ 0.0526 * LevelSuccessEvents 
-	+ 0.0457 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 576.5594
+	0.4827 * Cohort Size 
+	+ 0.1975 * LevelSuccessEvents 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1422.833
 
 LM num: 27
 ActiveUsersDay7 = 
-	0.7654 * Cohort Size 
-	+ 0.0526 * LevelSuccessEvents 
-	+ 0.0457 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 574.8897
+	0.5312 * Cohort Size 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1894.9787
 
 LM num: 28
 ActiveUsersDay7 = 
-	0.7654 * Cohort Size 
-	+ 0.0526 * LevelSuccessEvents 
-	+ 0.0526 * Sessions 
-	+ 0.5615 * MKTExpenses 
-	+ 553.8573
+	0.5393 * Cohort Size 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1889.8373
 
 LM num: 29
 ActiveUsersDay7 = 
-	1.0712 * Cohort Size 
-	+ 0.0526 * LevelSuccessEvents 
-	- 0.0194 * Sessions 
-	+ 0.0851 * MKTExpenses 
-	+ 903.9342
+	0.5393 * Cohort Size 
+	- 0.0445 * Sessions 
+	+ 0.2007 * MKTExpenses 
+	+ 1894.7607
 
 LM num: 30
 ActiveUsersDay7 = 
-	1.0712 * Cohort Size 
-	+ 0.0526 * LevelSuccessEvents 
-	- 0.0194 * Sessions 
-	- 0.027 * MKTExpenses 
-	+ 910.8956
+	0.2071 * Cohort Size 
+	+ 0.0616 * Sessions 
+	+ 0.4255 * MKTExpenses 
+	+ 1086.9788
 
 LM num: 31
 ActiveUsersDay7 = 
-	0.0676 * Cohort Size 
-	+ 0.053 * LevelSuccessEvents 
-	+ 0.2332 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	- 110.031
+	0.2071 * Cohort Size 
+	+ 0.0142 * LevelSuccessEvents 
+	+ 0.0519 * Sessions 
+	+ 0.4255 * MKTExpenses 
+	+ 1096.6488
 
 LM num: 32
 ActiveUsersDay7 = 
-	-0.0363 * Cohort Size 
-	+ 0.0422 * LevelSuccessEvents 
-	+ 0.2332 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	- 36.6399
+	0.2071 * Cohort Size 
+	+ 0.0142 * LevelSuccessEvents 
+	+ 0.0519 * Sessions 
+	+ 0.4255 * MKTExpenses 
+	+ 1103.8089
 
 LM num: 33
 ActiveUsersDay7 = 
-	-0.0363 * Cohort Size 
-	+ 0.0438 * LevelSuccessEvents 
-	+ 0.2332 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	- 42.9798
+	0.2071 * Cohort Size 
+	+ 0.0431 * LevelSuccessEvents 
+	+ 0.0008 * Sessions 
+	+ 0.4952 * MKTExpenses 
+	+ 1289.649
 
 LM num: 34
 ActiveUsersDay7 = 
-	-0.5016 * Cohort Size 
-	+ 0.0838 * LevelSuccessEvents 
-	+ 0.2218 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	+ 563.2734
+	0.2071 * Cohort Size 
+	+ 0.0431 * LevelSuccessEvents 
+	+ 0.0065 * Sessions 
+	+ 0.4952 * MKTExpenses 
+	+ 1246.2736
 
 LM num: 35
 ActiveUsersDay7 = 
-	-0.5008 * Cohort Size 
-	+ 0.0838 * LevelSuccessEvents 
-	+ 0.2218 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	+ 563.145
+	0.2071 * Cohort Size 
+	+ 0.0431 * LevelSuccessEvents 
+	+ 0.0056 * Sessions 
+	+ 0.4952 * MKTExpenses 
+	+ 1253.4247
 
 LM num: 36
 ActiveUsersDay7 = 
-	-0.5069 * Cohort Size 
-	+ 0.0932 * LevelSuccessEvents 
-	+ 0.2218 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	+ 536.7639
+	0.2071 * Cohort Size 
+	+ 0.0431 * LevelSuccessEvents 
+	+ 0.0056 * Sessions 
+	+ 0.4952 * MKTExpenses 
+	+ 1253.517
 
 LM num: 37
 ActiveUsersDay7 = 
-	-0.3749 * Cohort Size 
-	+ 0.017 * LevelSuccessEvents 
-	+ 0.2218 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	+ 785.0608
+	0.2071 * Cohort Size 
+	+ 0.0517 * LevelSuccessEvents 
+	- 0.0064 * Sessions 
+	+ 0.4952 * MKTExpenses 
+	+ 1313.6725
 
 LM num: 38
 ActiveUsersDay7 = 
-	-0.3749 * Cohort Size 
-	+ 0.017 * LevelSuccessEvents 
-	+ 0.2218 * Sessions 
-	+ 0.9321 * MKTExpenses 
-	+ 782.545
+	0.2071 * Cohort Size 
+	+ 0.0517 * LevelSuccessEvents 
+	- 0.0064 * Sessions 
+	+ 0.4952 * MKTExpenses 
+	+ 1314.5681
 
 Number of Rules : 38
 
@@ -402,138 +376,138 @@ Time taken to build model: 0.02 seconds
 === Predictions on test data ===
 
 inst#,    actual, predicted, error
-     1   1683       1575.37    -107.63 
-     2    967       1210.401    243.401
-     3   1336       1365.676     29.676
-     4    730        984.266    254.266
-     5    688        760.615     72.615
-     6   4291       3305.997   -985.003
-     7   2233       2440.562    207.562
-     8   2046       2006.303    -39.697
-     9    459       1241.188    782.188
-    10    951       1476.553    525.553
-    11   1300       1699.602    399.602
-    12   1776       1654.674   -121.326
-    13   1897       1698.923   -198.077
-     1   2174       2054.064   -119.936
-     2   2963       2591.02    -371.98 
-     3   1251       1532.247    281.247
-     4   1632       1763.729    131.729
-     5   1273       1686.754    413.754
-     6    756       1038.188    282.188
-     7    650        734.085     84.085
-     8   1530       1489.592    -40.408
-     9   3724       2496.912  -1227.088
-    10   1234       1455.362    221.362
-    11   1481       1516.14      35.14 
-    12    665        944.815    279.815
-    13    768       1107.099    339.099
-     1   1425       1672.845    247.845
-     2    709        969.649    260.649
-     3   1272       1820.122    548.122
-     4    883       1101.975    218.975
-     5   2135       2211.76      76.76 
-     6   2070        921.659  -1148.341
-     7   1136       1162.111     26.111
-     8    564        724.61     160.61 
-     9   1081       1137.122     56.122
-    10   1474       1757.385    283.385
-    11    602        739.893    137.893
-    12    608        735.17     127.17 
-    13   1542       1536.244     -5.756
-     1   2537       1503.951  -1033.049
-     2   1250       1658.705    408.705
-     3   1498       1544.142     46.142
-     4   1744       1750.139      6.139
-     5   3596       3583.31     -12.69 
-     6   1831       1662.603   -168.397
-     7    643        716.091     73.091
-     8    954        884.584    -69.416
-     9   1538       1528.402     -9.598
-    10   1527       1582.402     55.402
-    11   1598       1611.89      13.89 
-    12    922       1791.734    869.734
-    13   1372       1476.407    104.407
-     1   2422       2676.242    254.242
-     2    928       1675.274    747.274
-     3   1485       1501.581     16.581
-     4   1991       1955.163    -35.837
-     5   1303       1485.102    182.102
-     6    999       1452.082    453.082
-     7   1412       1809.931    397.931
-     8   3950       3473.46    -476.54 
-     9    616        938.884    322.884
-    10   1690       1599.74     -90.26 
-    11    665       1043.489    378.489
-    12    801       1210.067    409.067
-     1    769       1041.333    272.333
-     2    670       1271.336    601.336
-     3   1766       1701.87     -64.13 
-     4   1399       1538.602    139.602
-     5    585       1251.703    666.703
-     6   1833       1653.773   -179.227
-     7   1935       1785.222   -149.778
-     8   1218       1353.385    135.385
-     9   1046       1197.393    151.393
-    10   1472       1535.661     63.661
-    11   1414       1482.681     68.681
-    12   2222       1532.688   -689.312
-     1   1457       1479.487     22.487
-     2   1067       1142.412     75.412
-     3    750       1024.866    274.866
-     4   1416       1313.164   -102.836
-     5   2632       1519.164  -1112.836
-     6   1708       1791.374     83.374
-     7    688        747.884     59.884
-     8   3819       2574.932  -1244.068
-     9    499       1265.085    766.085
-    10   3746       1790.658  -1955.342
-    11   1364       1214.418   -149.582
-    12   1996       2030.528     34.528
-     1   1381       1171.468   -209.532
-     2   1559       1590.888     31.888
-     3   1385       1413.248     28.248
-     4    624        671.885     47.885
-     5   1511       1533.459     22.459
-     6   1208       1191.244    -16.756
-     7   2016       1848.962   -167.038
-     8   1188       1068.166   -119.834
-     9   2073        857.871  -1215.129
-    10   1205       1398.955    193.955
-    11   1769       1264.06    -504.94 
-    12    592        649.989     57.989
-     1    937       1025.004     88.004
-     2   1173       1327.391    154.391
-     3   1648       1802.447    154.447
-     4   4097       2947.83   -1149.17 
-     5   1205       1174.938    -30.062
-     6   1323       1180.538   -142.462
-     7   2124       1585.555   -538.445
-     8   1125       1037.83     -87.17 
-     9   2264       2166.128    -97.872
-    10    885        935.843     50.843
-    11   1547       1510.054    -36.946
-    12   2665       2928.043    263.043
-     1   1340       1364.665     24.665
-     2   2344       1570.031   -773.969
-     3    603        671.89      68.89 
-     4    896       1048.431    152.431
-     5    913       1593.419    680.419
-     6   1367       1343.415    -23.585
-     7   1188       1191.329      3.329
-     8   1953       2046.229     93.229
-     9   1625       1581.174    -43.826
-    10   1034       1212.653    178.653
-    11   1395       1168.86    -226.14 
-    12   2171       2115.424    -55.576
+     1   1683       1576.892   -106.108
+     2    967       1387.499    420.499
+     3   1336       1899.777    563.777
+     4    730        917.099    187.099
+     5    688        854.862    166.862
+     6   4291       2052.897  -2238.103
+     7   2233       2651.436    418.436
+     8   2046       2542.851    496.851
+     9    459       1387.354    928.354
+    10    951       1517.931    566.931
+    11   1300       1826.926    526.926
+    12   1776       1896.572    120.572
+    13   1897       1737.114   -159.886
+     1   2174       2120.033    -53.967
+     2   2963       2534.573   -428.427
+     3   1251       1401.62     150.62 
+     4   1632       1785.494    153.494
+     5   1273       2063.045    790.045
+     6    756        896.743    140.743
+     7    650        835.397    185.397
+     8   1530       1496.382    -33.618
+     9   3724       2115.003  -1608.997
+    10   1234       1941.596    707.596
+    11   1481       1514.843     33.843
+    12    665        834.909    169.909
+    13    768        982.233    214.233
+     1   1425       1435.902     10.902
+     2    709        900.932    191.932
+     3   1272       2337.148   1065.148
+     4    883        963.672     80.672
+     5   2135       2353.875    218.875
+     6   2070       1720.565   -349.435
+     7   1136       1333.996    197.996
+     8    564        848.944    284.944
+     9   1081       1210.31     129.31 
+    10   1474       1461.295    -12.705
+    11    602        837.504    235.504
+    12    608        849.674    241.674
+    13   1542       1534.387     -7.613
+     1   2537       1744.117   -792.883
+     2   1250       1563.136    313.136
+     3   1498       1535.829     37.829
+     4   1744       1762.196     18.196
+     5   3596       2404.471  -1191.529
+     6   1831       1647.209   -183.791
+     7    643        831.628    188.628
+     8    954       1035.356     81.356
+     9   1538       1569.001     31.001
+    10   1527       1592.81      65.81 
+    11   1598       1628.506     30.506
+    12    922        991.823     69.823
+    13   1372       1601.387    229.387
+     1   2422       2329.488    -92.512
+     2    928       1079.575    151.575
+     3   1485       1539.291     54.291
+     4   1991       1969.406    -21.594
+     5   1303       1411.984    108.984
+     6    999       1528.264    529.264
+     7   1412       1585.521    173.521
+     8   3950       2171.991  -1778.009
+     9    616        864.762    248.762
+    10   1690       1577.977   -112.023
+    11    665        906.341    241.341
+    12    801       1398.995    597.995
+     1    769        880.696    111.696
+     2    670       2931.147   2261.147
+     3   1766       1757.731     -8.269
+     4   1399       1508.66     109.66 
+     5    585       1629.451   1044.451
+     6   1833       1702.836   -130.164
+     7   1935       1747.853   -187.147
+     8   1218       1416.97     198.97 
+     9   1046       1362.933    316.933
+    10   1472       1463.08      -8.92 
+    11   1414       1353.452    -60.548
+    12   2222       1800.338   -421.662
+     1   1457       1431.494    -25.506
+     2   1067       1327.368    260.368
+     3    750        925.571    175.571
+     4   1416       1392.278    -23.722
+     5   2632       2102.152   -529.848
+     6   1708       1822.576    114.576
+     7    688        853.576    165.576
+     8   3819       2555.814  -1263.186
+     9    499       1432.488    933.488
+    10   3746       1681.649  -2064.351
+    11   1364       1764.275    400.275
+    12   1996       2233.385    237.385
+     1   1381       1473.836     92.836
+     2   1559       1653.686     94.686
+     3   1385       1487.444    102.444
+     4    624        830.883    206.883
+     5   1511       1575.628     64.628
+     6   1208       1228.148     20.148
+     7   2016       1766.384   -249.616
+     8   1188       1162.317    -25.683
+     9   2073       1955.021   -117.979
+    10   1205       1459.38     254.38 
+    11   1769       1654.229   -114.771
+    12    592        807.935    215.935
+     1    937        984.574     47.574
+     2   1173       1366.061    193.061
+     3   1648       1790.076    142.076
+     4   4097       1410.217  -2686.783
+     5   1205       1217.741     12.741
+     6   1323       1725.933    402.933
+     7   2124       1799.768   -324.232
+     8   1125       1076.191    -48.809
+     9   2264       2188.619    -75.381
+    10    885       1093.144    208.144
+    11   1547       1603.855     56.855
+    12   2665       2395.526   -269.474
+     1   1340       1936.937    596.937
+     2   2344       1926.539   -417.461
+     3    603        829.419    226.419
+     4    896        961.632     65.632
+     5    913       1775.332    862.332
+     6   1367       1930.33     563.33 
+     7   1188       1232.928     44.928
+     8   1953       1929.603    -23.397
+     9   1625       1577.844    -47.156
+    10   1034       1413.992    379.992
+    11   1395       1512.008    117.008
+    12   2171       2188.807     17.807
 
 === Cross-validation ===
 === Summary ===
 
-Correlation coefficient                  0.8437
-Mean absolute error                    278.4127
-Root mean squared error                438.2537
-Relative absolute error                 48.7403 %
-Root relative squared error             55.243  %
+Correlation coefficient                  0.6711
+Mean absolute error                    341.8196
+Root mean squared error                590.2632
+Relative absolute error                 59.8406 %
+Root relative squared error             74.4042 %
 Total Number of Instances              124     
 

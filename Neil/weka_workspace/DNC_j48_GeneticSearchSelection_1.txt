@@ -1,0 +1,40 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CfsSubsetEval 
+Search:weka.attributeSelection.GeneticSearch -Z 100 -G 200 -C 0.6 -M 0.033 -R 20 -S 1
+Relation:     DNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Discretize-O-B5-M-1.0-R11
+Instances:    124
+Attributes:   13
+              Cohort Size
+              Day 1
+              CrashesANRDay1
+              DailyAverageRating
+              LevelFailedEvents
+              LevelSuccessEvents
+              LevelPlayedEvents
+              Sessions
+              MKTExpenses
+              TotalPurchases
+              ActiveUsersDay7
+              AvgSessionSeconds
+              MedianSessionSeconds
+Evaluation mode:10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation (stratified), seed: 1 ===
+
+number of folds (%)  attribute
+          10(100 %)    1 Cohort Size
+           0(  0 %)    2 Day 1
+           1( 10 %)    3 CrashesANRDay1
+           1( 10 %)    4 DailyAverageRating
+           0(  0 %)    5 LevelFailedEvents
+           4( 40 %)    6 LevelSuccessEvents
+          10(100 %)    7 LevelPlayedEvents
+           2( 20 %)    8 Sessions
+          10(100 %)    9 MKTExpenses
+           4( 40 %)   10 TotalPurchases
+           9( 90 %)   12 AvgSessionSeconds
+           1( 10 %)   13 MedianSessionSeconds
+
