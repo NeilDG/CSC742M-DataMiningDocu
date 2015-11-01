@@ -1,0 +1,211 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.M5P -- -M 4.0
+Relation:     DNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R4-9,18-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R3,5-6,8-9,12,11
+Instances:    250
+Attributes:   7
+              CrashesANRDay1
+              LevelFailedEvents
+              LevelSuccessEvents
+              Sessions
+              MKTExpenses
+              AvgSessionSeconds
+              ActiveUsersDay7
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+M5 pruned model tree:
+(using smoothed linear models)
+
+MKTExpenses <= 79.645 : LM1 (141/43.898%)
+MKTExpenses >  79.645 : 
+|   MKTExpenses <= 89 : 
+|   |   LevelFailedEvents <= 3520.5 : 
+|   |   |   AvgSessionSeconds <= 474.5 : LM2 (3/9.87%)
+|   |   |   AvgSessionSeconds >  474.5 : LM3 (8/99.952%)
+|   |   LevelFailedEvents >  3520.5 : LM4 (23/41.964%)
+|   MKTExpenses >  89 : 
+|   |   Sessions <= 6172 : 
+|   |   |   LevelSuccessEvents <= 3813.5 : 
+|   |   |   |   AvgSessionSeconds <= 475.5 : LM5 (4/4.553%)
+|   |   |   |   AvgSessionSeconds >  475.5 : LM6 (9/4.786%)
+|   |   |   LevelSuccessEvents >  3813.5 : 
+|   |   |   |   AvgSessionSeconds <= 417.5 : 
+|   |   |   |   |   LevelSuccessEvents <= 4959 : LM7 (5/3.953%)
+|   |   |   |   |   LevelSuccessEvents >  4959 : LM8 (16/7.322%)
+|   |   |   |   AvgSessionSeconds >  417.5 : LM9 (24/8.682%)
+|   |   Sessions >  6172 : 
+|   |   |   MKTExpenses <= 380.59 : LM10 (13/10.017%)
+|   |   |   MKTExpenses >  380.59 : LM11 (4/7.876%)
+
+LM num: 1
+ActiveUsersDay7 = 
+	99.8789 * CrashesANRDay1 
+	- 0.0189 * LevelFailedEvents 
+	- 0.1516 * LevelSuccessEvents 
+	+ 0.2631 * Sessions 
+	+ 0.138 * MKTExpenses 
+	- 0.5494 * AvgSessionSeconds 
+	+ 798.0496
+
+LM num: 2
+ActiveUsersDay7 = 
+	-0.3033 * LevelFailedEvents 
+	+ 0.6735 * LevelSuccessEvents 
+	+ 0.0484 * Sessions 
+	+ 0.1737 * MKTExpenses 
+	+ 11.8951 * AvgSessionSeconds 
+	- 5091.2962
+
+LM num: 3
+ActiveUsersDay7 = 
+	-0.3033 * LevelFailedEvents 
+	+ 0.8211 * LevelSuccessEvents 
+	+ 0.0484 * Sessions 
+	+ 0.1737 * MKTExpenses 
+	+ 10.1757 * AvgSessionSeconds 
+	- 4630.2694
+
+LM num: 4
+ActiveUsersDay7 = 
+	-0.3085 * LevelFailedEvents 
+	+ 0.1995 * LevelSuccessEvents 
+	+ 0.0484 * Sessions 
+	+ 0.1737 * MKTExpenses 
+	+ 2.9701 * AvgSessionSeconds 
+	+ 452.7037
+
+LM num: 5
+ActiveUsersDay7 = 
+	-2.0973 * CrashesANRDay1 
+	- 0.0845 * LevelFailedEvents 
+	+ 0.0511 * LevelSuccessEvents 
+	+ 0.0651 * Sessions 
+	+ 0.6188 * MKTExpenses 
+	- 0.7193 * AvgSessionSeconds 
+	+ 1551.4152
+
+LM num: 6
+ActiveUsersDay7 = 
+	-2.0973 * CrashesANRDay1 
+	- 0.0917 * LevelFailedEvents 
+	+ 0.0511 * LevelSuccessEvents 
+	+ 0.0651 * Sessions 
+	+ 0.6188 * MKTExpenses 
+	- 0.6449 * AvgSessionSeconds 
+	+ 1532.0913
+
+LM num: 7
+ActiveUsersDay7 = 
+	-2.0973 * CrashesANRDay1 
+	- 0.1071 * LevelFailedEvents 
+	+ 0.0553 * LevelSuccessEvents 
+	+ 0.0651 * Sessions 
+	+ 0.9454 * MKTExpenses 
+	- 0.2794 * AvgSessionSeconds 
+	+ 1435.6288
+
+LM num: 8
+ActiveUsersDay7 = 
+	-2.0973 * CrashesANRDay1 
+	- 0.1211 * LevelFailedEvents 
+	+ 0.0526 * LevelSuccessEvents 
+	+ 0.0651 * Sessions 
+	+ 1.0323 * MKTExpenses 
+	- 0.2794 * AvgSessionSeconds 
+	+ 1520.6509
+
+LM num: 9
+ActiveUsersDay7 = 
+	-2.0973 * CrashesANRDay1 
+	- 0.1333 * LevelFailedEvents 
+	+ 0.0556 * LevelSuccessEvents 
+	+ 0.0651 * Sessions 
+	+ 0.8987 * MKTExpenses 
+	- 0.5457 * AvgSessionSeconds 
+	+ 1670.4187
+
+LM num: 10
+ActiveUsersDay7 = 
+	-4.7845 * CrashesANRDay1 
+	- 0.0413 * LevelFailedEvents 
+	+ 0.0346 * LevelSuccessEvents 
+	+ 0.1066 * Sessions 
+	+ 0.6948 * MKTExpenses 
+	+ 0.021 * AvgSessionSeconds 
+	+ 867.9133
+
+LM num: 11
+ActiveUsersDay7 = 
+	-4.7845 * CrashesANRDay1 
+	- 0.0593 * LevelFailedEvents 
+	+ 0.0346 * LevelSuccessEvents 
+	+ 0.1066 * Sessions 
+	+ 0.8034 * MKTExpenses 
+	+ 0.021 * AvgSessionSeconds 
+	+ 1009.8918
+
+Number of Rules : 11
+Attribute mappings:
+
+Model attributes              	    Incoming attributes
+------------------------------	    ----------------
+(numeric) CrashesANRDay1      	--> 3 (numeric) CrashesANRDay1
+(numeric) LevelFailedEvents   	--> 5 (numeric) LevelFailedEvents
+(numeric) LevelSuccessEvents  	--> 6 (numeric) LevelSuccessEvents
+(numeric) Sessions            	--> 8 (numeric) Sessions
+(numeric) MKTExpenses         	--> 9 (numeric) MKTExpenses
+(numeric) AvgSessionSeconds   	--> 12 (numeric) AvgSessionSeconds
+(numeric) ActiveUsersDay7     	--> 11 (numeric) ActiveUsersDay7
+
+
+Time taken to build model: 0.02 seconds
+
+=== Predictions on test set ===
+
+    inst#     actual  predicted      error
+        1    637        803.254    166.254 
+        2    599        872.061    273.061 
+        3    535        742.715    207.715 
+        4    535        745.291    210.291 
+        5    540        910.426    370.426 
+        6    552        894.569    342.569 
+        7    566        756.931    190.931 
+        8    597        744.872    147.872 
+        9    553        770.522    217.522 
+       10    486        728.774    242.774 
+       11    474        781.905    307.905 
+       12    451        748.37     297.37  
+       13    432        743.69     311.69  
+       14    498        760.497    262.497 
+       15    543        907.114    364.114 
+       16    526        743.957    217.957 
+       17    478        688.022    210.022 
+       18    464        755.812    291.812 
+       19    437        793.634    356.634 
+       20    445        728.606    283.606 
+       21    464        732.649    268.649 
+       22    502        691.513    189.513 
+       23    451        840.124    389.124 
+       24    439        898.013    459.013 
+       25    422        739.997    317.997 
+       26    411        715.261    304.261 
+       27    418        662.526    244.526 
+       28    431        718.615    287.615 
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.01 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.3731
+Mean absolute error                    276.2044
+Root mean squared error                285.4435
+Relative absolute error                 31.9779 %
+Root relative squared error             32.966  %
+Total Number of Instances               28     
+

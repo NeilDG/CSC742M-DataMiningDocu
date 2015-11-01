@@ -1,0 +1,138 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.functions.MultilayerPerceptron -- -L 0.001 -M 0.2 -N 5000 -V 0 -S 0 -E 20 -H t -num-decimal-places 4
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-V-R1,9-10,12-13,11
+Instances:    250
+Attributes:   6
+              Cohort Size
+              MKTExpenses
+              TotalPurchases
+              MedianSessionSeconds
+              AvgSessionSeconds
+              ActiveUsersDay7
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+Linear Node 0
+    Inputs    Weights
+    Threshold    -0.3832412449420984
+    Node 1    -0.4343938327896186
+    Node 2    1.6956798808946174
+    Node 3    -0.12878203306195776
+    Node 4    0.2948883883754701
+    Node 5    -0.9924470557896993
+    Node 6    -0.8328466961291509
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    0.025175176666373415
+    Attrib Cohort Size    0.13072191129142213
+    Attrib MKTExpenses    0.08453337262622891
+    Attrib TotalPurchases    0.17224399361024556
+    Attrib MedianSessionSeconds    -0.15912650120814056
+    Attrib AvgSessionSeconds    -0.16496803790401682
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    2.228375555098684
+    Attrib Cohort Size    0.9290266022122511
+    Attrib MKTExpenses    1.4162146279318168
+    Attrib TotalPurchases    1.4410556358227062
+    Attrib MedianSessionSeconds    0.47554613384965827
+    Attrib AvgSessionSeconds    -0.9062411726767075
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.05540402911082816
+    Attrib Cohort Size    0.06579114961004982
+    Attrib MKTExpenses    0.0390646823853659
+    Attrib TotalPurchases    0.18890687167821205
+    Attrib MedianSessionSeconds    0.10370420916320006
+    Attrib AvgSessionSeconds    -0.054304832320751006
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    0.23744808506667284
+    Attrib Cohort Size    -0.10312451497905374
+    Attrib MKTExpenses    0.008099168034234027
+    Attrib TotalPurchases    0.22562166760532118
+    Attrib MedianSessionSeconds    0.38224720524407413
+    Attrib AvgSessionSeconds    0.022709154171813885
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.9806499581488576
+    Attrib Cohort Size    0.09970500346268327
+    Attrib MKTExpenses    -0.30182770147943955
+    Attrib TotalPurchases    -0.513309313571785
+    Attrib MedianSessionSeconds    -0.8012120688436928
+    Attrib AvgSessionSeconds    -0.049597334263871126
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.17628482692889533
+    Attrib Cohort Size    0.29619704828853577
+    Attrib MKTExpenses    0.15747406498835356
+    Attrib TotalPurchases    0.1141392318115601
+    Attrib MedianSessionSeconds    -0.43783975978178374
+    Attrib AvgSessionSeconds    -0.18856389528720685
+Class 
+    Input
+    Node 0
+
+Attribute mappings:
+
+Model attributes                	    Incoming attributes
+--------------------------------	    ----------------
+(numeric) Cohort Size           	--> 1 (numeric) Cohort Size
+(numeric) MKTExpenses           	--> 9 (numeric) MKTExpenses
+(numeric) TotalPurchases        	--> 10 (numeric) TotalPurchases
+(numeric) MedianSessionSeconds  	--> 12 (numeric) MedianSessionSeconds
+(numeric) AvgSessionSeconds     	--> 13 (numeric) AvgSessionSeconds
+(numeric) ActiveUsersDay7       	--> 11 (numeric) ActiveUsersDay7
+
+
+Time taken to build model: 1.44 seconds
+
+=== Predictions on test set ===
+
+    inst#     actual  predicted      error
+        1   5562       6801.435   1239.435 
+        2   5701       6732.124   1031.124 
+        3   5347       7354.575   2007.575 
+        4   5227       6405.436   1178.436 
+        5   5096       5414.674    318.674 
+        6   5087       5448.623    361.623 
+        7   4961       5741.886    780.886 
+        8   5068       6624.875   1556.875 
+        9   5115       5930.13     815.13  
+       10   4982       6396.681   1414.681 
+       11   4902       6370.718   1468.718 
+       12   4697       6083.334   1386.334 
+       13   4702       6229.308   1527.308 
+       14   4728       5021.501    293.501 
+       15   4787       6640.709   1853.709 
+       16   4803       6476.435   1673.435 
+       17   4554       6051.882   1497.882 
+       18   4486       6544.8     2058.8   
+       19   4451       6192.144   1741.144 
+       20   4451       6274.884   1823.884 
+       21   4387       6176.714   1789.714 
+       22   4327       5197.496    870.496 
+       23   4458       5961.646   1503.646 
+       24   4325       6025.258   1700.258 
+       25   4131       6893.715   2762.715 
+       26   4055       6820.361   2765.361 
+       27   3907       6620.613   2713.613 
+       28   3968       6700.773   2732.773 
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.0383
+Mean absolute error                   1530.9904
+Root mean squared error               1677.0443
+Relative absolute error                 37.4223 %
+Root relative squared error             40.7419 %
+Total Number of Instances               28     
+

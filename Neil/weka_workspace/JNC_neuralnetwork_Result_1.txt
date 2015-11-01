@@ -1,0 +1,90 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.MultilayerPerceptron -L 0.001 -M 0.2 -N 5000 -V 0 -S 0 -E 20 -H t -num-decimal-places 4
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-V-R1,9-10,12-13,11
+Instances:    250
+Attributes:   6
+              Cohort Size
+              MKTExpenses
+              TotalPurchases
+              MedianSessionSeconds
+              AvgSessionSeconds
+              ActiveUsersDay7
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Linear Node 0
+    Inputs    Weights
+    Threshold    -0.3832412449420984
+    Node 1    -0.4343938327896186
+    Node 2    1.6956798808946174
+    Node 3    -0.12878203306195776
+    Node 4    0.2948883883754701
+    Node 5    -0.9924470557896993
+    Node 6    -0.8328466961291509
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    0.025175176666373415
+    Attrib Cohort Size    0.13072191129142213
+    Attrib MKTExpenses    0.08453337262622891
+    Attrib TotalPurchases    0.17224399361024556
+    Attrib MedianSessionSeconds    -0.15912650120814056
+    Attrib AvgSessionSeconds    -0.16496803790401682
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    2.228375555098684
+    Attrib Cohort Size    0.9290266022122511
+    Attrib MKTExpenses    1.4162146279318168
+    Attrib TotalPurchases    1.4410556358227062
+    Attrib MedianSessionSeconds    0.47554613384965827
+    Attrib AvgSessionSeconds    -0.9062411726767075
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.05540402911082816
+    Attrib Cohort Size    0.06579114961004982
+    Attrib MKTExpenses    0.0390646823853659
+    Attrib TotalPurchases    0.18890687167821205
+    Attrib MedianSessionSeconds    0.10370420916320006
+    Attrib AvgSessionSeconds    -0.054304832320751006
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    0.23744808506667284
+    Attrib Cohort Size    -0.10312451497905374
+    Attrib MKTExpenses    0.008099168034234027
+    Attrib TotalPurchases    0.22562166760532118
+    Attrib MedianSessionSeconds    0.38224720524407413
+    Attrib AvgSessionSeconds    0.022709154171813885
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.9806499581488576
+    Attrib Cohort Size    0.09970500346268327
+    Attrib MKTExpenses    -0.30182770147943955
+    Attrib TotalPurchases    -0.513309313571785
+    Attrib MedianSessionSeconds    -0.8012120688436928
+    Attrib AvgSessionSeconds    -0.049597334263871126
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.17628482692889533
+    Attrib Cohort Size    0.29619704828853577
+    Attrib MKTExpenses    0.15747406498835356
+    Attrib TotalPurchases    0.1141392318115601
+    Attrib MedianSessionSeconds    -0.43783975978178374
+    Attrib AvgSessionSeconds    -0.18856389528720685
+Class 
+    Input
+    Node 0
+
+
+Time taken to build model: 1.42 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.9315
+Mean absolute error                    457.19  
+Root mean squared error                608.1291
+Relative absolute error                 31.6426 %
+Root relative squared error             36.1706 %
+Total Number of Instances              250     
+

@@ -1,0 +1,125 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.REPTree -- -M 2 -V 1.0E-4 -N 10 -S 1 -L -1 -I 0.0
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-R2-3,6-8,10,13
+Instances:    250
+Attributes:   6
+              Cohort Size
+              DailyAverageRating
+              LevelFailedEvents
+              MKTExpenses
+              ActiveUsersDay7
+              MedianSessionSeconds
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+
+REPTree
+============
+
+MKTExpenses < 0.45
+|   Cohort Size < 523
+|   |   LevelFailedEvents < 28575.5
+|   |   |   Cohort Size < 362 : 5643.33 (3/7872.22) [0/0]
+|   |   |   Cohort Size >= 362
+|   |   |   |   MedianSessionSeconds < 338 : 6138.43 (7/4554.24) [0/0]
+|   |   |   |   MedianSessionSeconds >= 338 : 5868.6 (4/7750.25) [1/240.25]
+|   |   LevelFailedEvents >= 28575.5
+|   |   |   DailyAverageRating < 3.88 : 6400.67 (11/36732.63) [1/15647.74]
+|   |   |   DailyAverageRating >= 3.88
+|   |   |   |   LevelFailedEvents < 31305.5
+|   |   |   |   |   MedianSessionSeconds < 341.5 : 6444.5 (4/23257.25) [0/0]
+|   |   |   |   |   MedianSessionSeconds >= 341.5
+|   |   |   |   |   |   DailyAverageRating < 4.71 : 6759.67 (7/12549.84) [2/574.73]
+|   |   |   |   |   |   DailyAverageRating >= 4.71 : 6587.67 (3/1069.56) [0/0]
+|   |   |   |   LevelFailedEvents >= 31305.5 : 6893.5 (6/3230.92) [0/0]
+|   Cohort Size >= 523
+|   |   Cohort Size < 753.5
+|   |   |   LevelFailedEvents < 10645 : 7790.33 (2/3660.25) [1/1980.25]
+|   |   |   LevelFailedEvents >= 10645 : 7408.12 (22/26722.15) [3/31137.68]
+|   |   Cohort Size >= 753.5 : 7723.7 (10/21640.61) [0/0]
+MKTExpenses >= 0.45
+|   MedianSessionSeconds < 426.5
+|   |   MedianSessionSeconds < 382.5
+|   |   |   Cohort Size < 726
+|   |   |   |   LevelFailedEvents < 32029.5 : 11119 (3/227526) [0/0]
+|   |   |   |   LevelFailedEvents >= 32029.5 : 9882.63 (6/346433.92) [2/8436.25]
+|   |   |   Cohort Size >= 726 : 9399.74 (38/232771.3) [0/0]
+|   |   MedianSessionSeconds >= 382.5
+|   |   |   MKTExpenses < 53.5
+|   |   |   |   LevelFailedEvents < 36775.5
+|   |   |   |   |   Cohort Size < 1047.5 : 9938.88 (7/91606.69) [1/161718.88]
+|   |   |   |   |   Cohort Size >= 1047.5 : 9409.29 (5/42511.44) [2/24344.66]
+|   |   |   |   LevelFailedEvents >= 36775.5 : 10303.33 (6/93104.56) [0/0]
+|   |   |   MKTExpenses >= 53.5 : 10833.96 (50/357917.97) [6/639636.36]
+|   MedianSessionSeconds >= 426.5
+|   |   LevelFailedEvents < 33706.5
+|   |   |   Cohort Size < 818
+|   |   |   |   Cohort Size < 787 : 7405.75 (3/8854.22) [1/266.78]
+|   |   |   |   Cohort Size >= 787 : 7770.5 (2/12432.25) [0/0]
+|   |   |   Cohort Size >= 818 : 8339.83 (6/26080.47) [0/0]
+|   |   LevelFailedEvents >= 33706.5 : 9016.28 (20/68874.73) [5/18341.82]
+
+Size of the tree : 43
+Attribute mappings:
+
+Model attributes                	    Incoming attributes
+--------------------------------	    ----------------
+(numeric) Cohort Size           	--> 1 (numeric) Cohort Size
+(numeric) DailyAverageRating    	--> 4 (numeric) DailyAverageRating
+(numeric) LevelFailedEvents     	--> 5 (numeric) LevelFailedEvents
+(numeric) MKTExpenses           	--> 9 (numeric) MKTExpenses
+(numeric) ActiveUsersDay7       	--> 11 (numeric) ActiveUsersDay7
+(numeric) MedianSessionSeconds  	--> 12 (numeric) MedianSessionSeconds
+
+
+Time taken to build model: 0 seconds
+
+=== Predictions on test set ===
+
+    inst#     actual  predicted      error
+        1   5562       5868.6      306.6   
+        2   5701       5868.6      167.6   
+        3   5347       5868.6      521.6   
+        4   5227       5643.333    416.333 
+        5   5096       5643.333    547.333 
+        6   5087       5643.333    556.333 
+        7   4961       5643.333    682.333 
+        8   5068       5643.333    575.333 
+        9   5115       5643.333    528.333 
+       10   4982       5643.333    661.333 
+       11   4902       5643.333    741.333 
+       12   4697       5643.333    946.333 
+       13   4702       5643.333    941.333 
+       14   4728       5643.333    915.333 
+       15   4787       5643.333    856.333 
+       16   4803       5643.333    840.333 
+       17   4554       5643.333   1089.333 
+       18   4486       5643.333   1157.333 
+       19   4451       5643.333   1192.333 
+       20   4451       5643.333   1192.333 
+       21   4387       5643.333   1256.333 
+       22   4327       5643.333   1316.333 
+       23   4458       5643.333   1185.333 
+       24   4325       5643.333   1318.333 
+       25   4131       5643.333   1512.333 
+       26   4055       5643.333   1588.333 
+       27   3907       5643.333   1736.333 
+       28   3968       5643.333   1675.333 
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.6198
+Mean absolute error                    943.719 
+Root mean squared error               1030.8327
+Relative absolute error                 23.0675 %
+Root relative squared error             25.0429 %
+Total Number of Instances               28     
+

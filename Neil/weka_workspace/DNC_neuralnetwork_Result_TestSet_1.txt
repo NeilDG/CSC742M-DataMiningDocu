@@ -1,0 +1,84 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.functions.MultilayerPerceptron -- -L 0.001 -M 0.2 -N 5000 -V 0 -S 0 -E 20 -H a -num-decimal-places 4
+Relation:     DNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R4-9,18-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R1,9,11
+Instances:    250
+Attributes:   3
+              Cohort Size
+              MKTExpenses
+              ActiveUsersDay7
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+Linear Node 0
+    Inputs    Weights
+    Threshold    0.32845569121077756
+    Node 1    -2.1746618377455342
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.9330353175496866
+    Attrib Cohort Size    -1.2967518704071965
+    Attrib MKTExpenses    -0.6349072242575103
+Class 
+    Input
+    Node 0
+
+Attribute mappings:
+
+Model attributes           	    Incoming attributes
+---------------------------	    ----------------
+(numeric) Cohort Size      	--> 1 (numeric) Cohort Size
+(numeric) MKTExpenses      	--> 9 (numeric) MKTExpenses
+(numeric) ActiveUsersDay7  	--> 11 (numeric) ActiveUsersDay7
+
+
+Time taken to build model: 0.28 seconds
+
+=== Predictions on test set ===
+
+    inst#     actual  predicted      error
+        1    637       1008.015    371.015 
+        2    599       1011.991    412.991 
+        3    535        979.173    444.173 
+        4    535        983.153    448.153 
+        5    540        982.158    442.158 
+        6    552        957.277    405.277 
+        7    566        975.193    409.193 
+        8    597        986.137    389.137 
+        9    553        980.168    427.168 
+       10    486        969.222    483.222 
+       11    474        956.282    482.282 
+       12    451        969.222    518.222 
+       13    432        983.153    551.153 
+       14    498        978.178    480.178 
+       15    543        998.073    455.073 
+       16    526        984.148    458.148 
+       17    478        982.158    504.158 
+       18    464        960.264    496.264 
+       19    437        966.236    529.236 
+       20    445        962.255    517.255 
+       21    464        967.231    503.231 
+       22    502        991.111    489.111 
+       23    451        989.122    538.122 
+       24    439        968.227    529.227 
+       25    422        959.268    537.268 
+       26    411        967.231    556.231 
+       27    418        968.227    550.227 
+       28    431        965.241    534.241 
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.6587
+Mean absolute error                    480.7897
+Root mean squared error                483.6563
+Relative absolute error                 55.664  %
+Root relative squared error             55.8576 %
+Total Number of Instances               28     
+

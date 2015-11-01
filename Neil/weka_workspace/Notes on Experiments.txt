@@ -1,31 +1,110 @@
-- DNC achieved best accuracy in m5Base Result 2 using BestFirst selection of attributes. 
-Correlation coefficient                  0.6711
-Mean absolute error                    341.8196
-Root mean squared error                590.2632
-Relative absolute error                 59.8406 %
-Root relative squared error             74.4042 %
+-Tests follows 10-cross validation procedure. Feature selection is based on the dataset, learning model,
+and outcome of wrapper subset evaluation.
+-Consider test outcomes with seed variances (minimum of 5 seeds). Perform average evaluation.
+-JNC performed best on m5Base with the following results:
 
--DNC achieved the following results from actual test data in m5Base pruned
-Correlation coefficient                  0.808 
-Mean absolute error                    296.3802
-Root mean squared error                299.8047
-Relative absolute error                 29.2745 %
-Root relative squared error             29.5595 %
+=====m5Base
+Correlation coefficient                  0.9499
+Mean absolute error                    363.3713
+Root mean squared error                522.864 
+Relative absolute error                 25.1493 %
+Root relative squared error             31.0991 %
+Total Number of Instances              250   
 
--DNC performs slightly good for J48. 78% accuracy unfiltered attribute selection.
-Correctly Classified Instances          97               78.2258 %
-Incorrectly Classified Instances        27               21.7742 %
-Kappa statistic                          0.6651
-Mean absolute error                      0.119 
-Root mean squared error                  0.3203
-Relative absolute error                 36.0752 %
-Root relative squared error             79.021  %
+=====REPTree
+Correlation coefficient                  0.934 
+Mean absolute error                    417.3018
+Root mean squared error                602.4758
+Relative absolute error                 28.8819 %
+Root relative squared error             35.8343 %
+Total Number of Instances              250   
 
--Using correlation-based feature selection, DNC accuracy jumped to 79%
-Correctly Classified Instances          99               79.8387 %
-Incorrectly Classified Instances        25               20.1613 %
-Kappa statistic                          0.6883
-Mean absolute error                      0.1118
-Root mean squared error                  0.3073
-Relative absolute error                 33.8827 %
-Root relative squared error             75.8167 %
+=====Multilayer Perceptron
+Correlation coefficient                  0.9315
+Mean absolute error                    457.19  
+Root mean squared error                608.1291
+Relative absolute error                 31.6426 %
+Root relative squared error             36.1706 %
+Total Number of Instances              250  
+
+- REPTree and Multilayer Perceptron perform poorly on the test set. m5Base performed better when test set 
+is applied. Notice the significantly higher mean absolute error and mean squared error on REPTree and
+Multilayer Perceptron.
+
+=====m5Base 
+Correlation coefficient                  0.9442
+Mean absolute error                    380.6705
+Root mean squared error                410.3039
+Relative absolute error                  9.3048 %
+Root relative squared error              9.9679 %
+Total Number of Instances               28  
+
+=====REPTree 
+Correlation coefficient                  0.6198
+Mean absolute error                    943.719 
+Root mean squared error               1030.8327
+Relative absolute error                 23.0675 %
+Root relative squared error             25.0429 %
+Total Number of Instances               28 
+
+=====Multilayer Perceptron
+Correlation coefficient                  0.0383
+Mean absolute error                   1530.9904
+Root mean squared error               1677.0443
+Relative absolute error                 37.4223 %
+Root relative squared error             40.7419 %
+Total Number of Instances               28  
+
+-DNC did not perform acceptably on similar predictive models if we use squared error threshold of 50%. m5Base still
+performed best among the three models.
+
+=====m5Base
+Correlation coefficient                  0.7673
+Mean absolute error                    226.1379
+Root mean squared error                390.7313
+Relative absolute error                 55.0067 %
+Root relative squared error             64.3702 %
+Total Number of Instances              250
+
+=====REPTree
+Correlation coefficient                  0.6565
+Mean absolute error                    262.0065
+Root mean squared error                456.0032
+Relative absolute error                 63.7316 %
+Root relative squared error             75.1233 %
+Total Number of Instances              250  
+
+=====Multilayer Perceptron  
+Correlation coefficient                  0.5197
+Mean absolute error                    277.4295
+Root mean squared error                516.1081
+Relative absolute error                 67.4831 %
+Root relative squared error             85.0251 %
+Total Number of Instances              250 
+
+-DNC's result on test set was not good compared to JNC. Cprrelation was low (below 0.5) for m5Base, even hitting 0
+for correlation in REPTree. Multilayer perceptron yields the highest correlation, but also the highest MAE and
+RMSE compared to other models. REPTree has the lowest MAE and RMSE but also a correlation of 0. It may not
+perform well on varying values in DAU.
+
+=====m5Base
+Correlation coefficient                  0.3731
+Mean absolute error                    276.2044
+Root mean squared error                285.4435
+Relative absolute error                 31.9779 %
+Root relative squared error             32.966  %
+Total Number of Instances               28    
+
+=====REPTree
+Correlation coefficient                  0     
+Mean absolute error                    166.4048
+Root mean squared error                177.1683
+Relative absolute error                 19.2657 %
+Root relative squared error             20.4612 %
+
+=====Multilayer Perceptron  
+Correlation coefficient                  0.6587
+Mean absolute error                    480.7897
+Root mean squared error                483.6563
+Relative absolute error                 55.664  %
+Root relative squared error             55.8576 % 

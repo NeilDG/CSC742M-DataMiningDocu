@@ -1,0 +1,111 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+Relation:     DNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R4-9,18-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R5,8-9,11
+Instances:    250
+Attributes:   4
+              LevelFailedEvents
+              Sessions
+              MKTExpenses
+              ActiveUsersDay7
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+
+REPTree
+============
+
+MKTExpenses < 77.24
+|   Sessions < 5610.5
+|   |   MKTExpenses < 11.82
+|   |   |   LevelFailedEvents < 2524.5 : 662.33 (13/4485.01) [5/1336.96]
+|   |   |   LevelFailedEvents >= 2524.5 : 909.5 (3/286.89) [1/1248.44]
+|   |   MKTExpenses >= 11.82
+|   |   |   Sessions < 4974.5
+|   |   |   |   MKTExpenses < 49.72 : 1210.39 (23/135360.6) [21/300861.16]
+|   |   |   |   MKTExpenses >= 49.72 : 1018.34 (34/16832.66) [22/84534.84]
+|   |   |   Sessions >= 4974.5
+|   |   |   |   LevelFailedEvents < 5528 : 1436.67 (2/5256.25) [1/3906.25]
+|   |   |   |   LevelFailedEvents >= 5528 : 1245.5 (3/104.22) [1/1877.78]
+|   Sessions >= 5610.5
+|   |   LevelFailedEvents < 6533 : 1579.5 (2/1089) [2/23042]
+|   |   LevelFailedEvents >= 6533 : 1984.5 (4/904.25) [0/0]
+MKTExpenses >= 77.24
+|   LevelFailedEvents < 3467.5 : 2339.53 (12/1767696.91) [5/1558512.07]
+|   LevelFailedEvents >= 3467.5
+|   |   Sessions < 6877
+|   |   |   MKTExpenses < 117.19 : 1356.05 (30/41722.31) [12/51823.93]
+|   |   |   MKTExpenses >= 117.19
+|   |   |   |   MKTExpenses < 180.42
+|   |   |   |   |   LevelFailedEvents < 3778 : 1626 (2/1722.25) [2/18211.25]
+|   |   |   |   |   LevelFailedEvents >= 3778
+|   |   |   |   |   |   Sessions < 4262.5 : 1416.25 (4/1275.19) [0/0]
+|   |   |   |   |   |   Sessions >= 4262.5
+|   |   |   |   |   |   |   LevelFailedEvents < 4284 : 1634.5 (2/1482.25) [0/0]
+|   |   |   |   |   |   |   LevelFailedEvents >= 4284
+|   |   |   |   |   |   |   |   Sessions < 6083 : 1486.64 (9/2205.28) [2/2164.94]
+|   |   |   |   |   |   |   |   Sessions >= 6083 : 1567.25 (3/3122.67) [1/121]
+|   |   |   |   MKTExpenses >= 180.42 : 1675.6 (7/7259.55) [3/388.45]
+|   |   Sessions >= 6877 : 2051.68 (13/145061.61) [6/55481.85]
+
+Size of the tree : 33
+Attribute mappings:
+
+Model attributes             	    Incoming attributes
+-----------------------------	    ----------------
+(numeric) LevelFailedEvents  	--> 5 (numeric) LevelFailedEvents
+(numeric) Sessions           	--> 8 (numeric) Sessions
+(numeric) MKTExpenses        	--> 9 (numeric) MKTExpenses
+(numeric) ActiveUsersDay7    	--> 11 (numeric) ActiveUsersDay7
+
+
+Time taken to build model: 0 seconds
+
+=== Predictions on test set ===
+
+    inst#     actual  predicted      error
+        1    637        662.333     25.333 
+        2    599        662.333     63.333 
+        3    535        662.333    127.333 
+        4    535        662.333    127.333 
+        5    540        662.333    122.333 
+        6    552        662.333    110.333 
+        7    566        662.333     96.333 
+        8    597        662.333     65.333 
+        9    553        662.333    109.333 
+       10    486        662.333    176.333 
+       11    474        662.333    188.333 
+       12    451        662.333    211.333 
+       13    432        662.333    230.333 
+       14    498        662.333    164.333 
+       15    543        662.333    119.333 
+       16    526        662.333    136.333 
+       17    478        662.333    184.333 
+       18    464        662.333    198.333 
+       19    437        662.333    225.333 
+       20    445        662.333    217.333 
+       21    464        662.333    198.333 
+       22    502        662.333    160.333 
+       23    451        662.333    211.333 
+       24    439        662.333    223.333 
+       25    422        662.333    240.333 
+       26    411        662.333    251.333 
+       27    418        662.333    244.333 
+       28    431        662.333    231.333 
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.01 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0     
+Mean absolute error                    166.4048
+Root mean squared error                177.1683
+Relative absolute error                 19.2657 %
+Root relative squared error             20.4612 %
+Total Number of Instances               28     
+

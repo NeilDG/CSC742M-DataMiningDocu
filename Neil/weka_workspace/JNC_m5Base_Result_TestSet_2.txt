@@ -1,0 +1,126 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.M5P -- -M 4.0
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-V-R1-2,5-6,8-10,12,11
+Instances:    250
+Attributes:   9
+              Cohort Size
+              Day 1
+              LevelFailedEvents
+              LevelSuccessEvents
+              Sessions
+              MKTExpenses
+              TotalPurchases
+              MedianSessionSeconds
+              ActiveUsersDay7
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+M5 pruned model tree:
+(using smoothed linear models)
+
+Sessions <= 24715.5 : 
+|   Cohort Size <= 523 : LM1 (48/11.6%)
+|   Cohort Size >  523 : LM2 (46/12.814%)
+Sessions >  24715.5 : LM3 (156/34.815%)
+
+LM num: 1
+ActiveUsersDay7 = 
+	2.4056 * Cohort Size 
+	+ 0.121 * LevelFailedEvents 
+	- 0.0686 * LevelSuccessEvents 
+	+ 0.0563 * Sessions 
+	+ 0.7689 * MKTExpenses 
+	+ 3.7417 * TotalPurchases 
+	+ 1.3711 * MedianSessionSeconds 
+	+ 783.749
+
+LM num: 2
+ActiveUsersDay7 = 
+	2.3048 * Cohort Size 
+	+ 0.0144 * LevelFailedEvents 
+	- 0.0696 * LevelSuccessEvents 
+	+ 0.0569 * Sessions 
+	+ 0.7689 * MKTExpenses 
+	+ 3.7417 * TotalPurchases 
+	+ 1.3898 * MedianSessionSeconds 
+	+ 4337.5315
+
+LM num: 3
+ActiveUsersDay7 = 
+	0.0735 * Cohort Size 
+	- 76.2443 * Day 1 
+	- 0.1152 * LevelFailedEvents 
+	- 0.1153 * LevelSuccessEvents 
+	+ 0.2696 * Sessions 
+	+ 4.4499 * MKTExpenses 
+	+ 10.6432 * TotalPurchases 
+	+ 4.5605 * MedianSessionSeconds 
+	+ 8050.7284
+
+Number of Rules : 3
+Attribute mappings:
+
+Model attributes                	    Incoming attributes
+--------------------------------	    ----------------
+(numeric) Cohort Size           	--> 1 (numeric) Cohort Size
+(numeric) Day 1                 	--> 2 (numeric) Day 1
+(numeric) LevelFailedEvents     	--> 5 (numeric) LevelFailedEvents
+(numeric) LevelSuccessEvents    	--> 6 (numeric) LevelSuccessEvents
+(numeric) Sessions              	--> 8 (numeric) Sessions
+(numeric) MKTExpenses           	--> 9 (numeric) MKTExpenses
+(numeric) TotalPurchases        	--> 10 (numeric) TotalPurchases
+(numeric) MedianSessionSeconds  	--> 12 (numeric) MedianSessionSeconds
+(numeric) ActiveUsersDay7       	--> 11 (numeric) ActiveUsersDay7
+
+
+Time taken to build model: 0.03 seconds
+
+=== Predictions on test set ===
+
+    inst#     actual  predicted      error
+        1   5562       6038.757    476.757 
+        2   5701       6234.291    533.291 
+        3   5347       5887.281    540.281 
+        4   5227       5657.346    430.346 
+        5   5096       5399.82     303.82  
+        6   5087       5658.327    571.327 
+        7   4961       5414.338    453.338 
+        8   5068       5340.943    272.943 
+        9   5115       5528.552    413.552 
+       10   4982       5203.922    221.922 
+       11   4902       5076.829    174.829 
+       12   4697       4939.181    242.181 
+       13   4702       4992.259    290.259 
+       14   4728       4745.484     17.484 
+       15   4787       4974.039    187.039 
+       16   4803       5148.107    345.107 
+       17   4554       4872.432    318.432 
+       18   4486       4858.824    372.824 
+       19   4451       4685.882    234.882 
+       20   4451       4725.098    274.098 
+       21   4387       4690.019    303.019 
+       22   4327       4926.885    599.885 
+       23   4458       4932.448    474.448 
+       24   4325       4652.669    327.669 
+       25   4131       4605.983    474.983 
+       26   4055       4676.882    621.882 
+       27   3907       4576.051    669.051 
+       28   3968       4481.125    513.125 
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.9442
+Mean absolute error                    380.6705
+Root mean squared error                410.3039
+Relative absolute error                  9.3048 %
+Root relative squared error              9.9679 %
+Total Number of Instances               28     
+

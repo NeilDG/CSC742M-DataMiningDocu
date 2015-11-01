@@ -1,0 +1,77 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.REPTree -M 2 -V 1.0E-4 -N 10 -S 1 -L -1 -I 0.0
+Relation:     JNC Dataset Android 0511-0911 - Training Set-weka.filters.unsupervised.attribute.Remove-R1,4-9,18-weka.filters.unsupervised.attribute.Remove-V-R1,4-5,9,12,11
+Instances:    250
+Attributes:   6
+              Cohort Size
+              DailyAverageRating
+              LevelFailedEvents
+              MKTExpenses
+              MedianSessionSeconds
+              ActiveUsersDay7
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+REPTree
+============
+
+MKTExpenses < 0.45
+|   Cohort Size < 523
+|   |   LevelFailedEvents < 28575.5
+|   |   |   Cohort Size < 362 : 5643.33 (3/7872.22) [0/0]
+|   |   |   Cohort Size >= 362
+|   |   |   |   MedianSessionSeconds < 338 : 6138.43 (7/4554.24) [0/0]
+|   |   |   |   MedianSessionSeconds >= 338 : 5868.6 (4/7750.25) [1/240.25]
+|   |   LevelFailedEvents >= 28575.5
+|   |   |   DailyAverageRating < 3.88 : 6400.67 (11/36732.63) [1/15647.74]
+|   |   |   DailyAverageRating >= 3.88
+|   |   |   |   LevelFailedEvents < 31305.5
+|   |   |   |   |   MedianSessionSeconds < 341.5 : 6444.5 (4/23257.25) [0/0]
+|   |   |   |   |   MedianSessionSeconds >= 341.5
+|   |   |   |   |   |   DailyAverageRating < 4.71 : 6759.67 (7/12549.84) [2/574.73]
+|   |   |   |   |   |   DailyAverageRating >= 4.71 : 6587.67 (3/1069.56) [0/0]
+|   |   |   |   LevelFailedEvents >= 31305.5 : 6893.5 (6/3230.92) [0/0]
+|   Cohort Size >= 523
+|   |   Cohort Size < 753.5
+|   |   |   LevelFailedEvents < 10645 : 7790.33 (2/3660.25) [1/1980.25]
+|   |   |   LevelFailedEvents >= 10645 : 7408.12 (22/26722.15) [3/31137.68]
+|   |   Cohort Size >= 753.5 : 7723.7 (10/21640.61) [0/0]
+MKTExpenses >= 0.45
+|   MedianSessionSeconds < 426.5
+|   |   MedianSessionSeconds < 382.5
+|   |   |   Cohort Size < 726
+|   |   |   |   LevelFailedEvents < 32029.5 : 11119 (3/227526) [0/0]
+|   |   |   |   LevelFailedEvents >= 32029.5 : 9882.63 (6/346433.92) [2/8436.25]
+|   |   |   Cohort Size >= 726 : 9399.74 (38/232771.3) [0/0]
+|   |   MedianSessionSeconds >= 382.5
+|   |   |   MKTExpenses < 53.5
+|   |   |   |   LevelFailedEvents < 36775.5
+|   |   |   |   |   Cohort Size < 1047.5 : 9938.88 (7/91606.69) [1/161718.88]
+|   |   |   |   |   Cohort Size >= 1047.5 : 9409.29 (5/42511.44) [2/24344.66]
+|   |   |   |   LevelFailedEvents >= 36775.5 : 10303.33 (6/93104.56) [0/0]
+|   |   |   MKTExpenses >= 53.5 : 10833.96 (50/357917.97) [6/639636.36]
+|   MedianSessionSeconds >= 426.5
+|   |   LevelFailedEvents < 33706.5
+|   |   |   Cohort Size < 818
+|   |   |   |   Cohort Size < 787 : 7405.75 (3/8854.22) [1/266.78]
+|   |   |   |   Cohort Size >= 787 : 7770.5 (2/12432.25) [0/0]
+|   |   |   Cohort Size >= 818 : 8339.83 (6/26080.47) [0/0]
+|   |   LevelFailedEvents >= 33706.5 : 9016.28 (20/68874.73) [5/18341.82]
+
+Size of the tree : 43
+
+Time taken to build model: 0 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.934 
+Mean absolute error                    417.3018
+Root mean squared error                602.4758
+Relative absolute error                 28.8819 %
+Root relative squared error             35.8343 %
+Total Number of Instances              250     
+
