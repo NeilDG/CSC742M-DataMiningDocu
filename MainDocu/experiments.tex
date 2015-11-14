@@ -1,4 +1,79 @@
 \section{Experiments and Results}
 This section contains the experiments performed and the results of the models used. As mentioned in the previous section, we have the nominal type and the numeric type of dataset for both games. We proceed with results on using numeric values for \textbf{DAU-Day 7} followed by nominal values to represent ranges for \textbf{DAU-Day7}.
 
-For the numeric type, we consider the following metrics for evaluation; correlation coefficient, root mean squared error (RMSE) and roor relative squared error (RRSE).
+For the numeric type, we consider the following metrics for evaluation; correlation coefficient, mean absolute error (MAE), root mean squared error (RMSE), relative absolute error (RAE), and root relative squared error (RRSE). We discuss M5Base, REPTree and Multilayer Perceptron as separate subsections.
+
+\subsection{Correlation Analysis}
+We measured correlation of attributes with \textbf{DAU-Day7} to determine which attributes should we include for training different prediction models. This was our first basis for feature selection. However, we did not solely rely on correlation analysis and considered other feature selection techniques\footnote{Various search and selection techniques are available in WEKA for feature selection.} to improve the accuracy of the models.
+
+We primarily used correlation analysis to determine if there are strong relationships with \textbf{DAU-Day7} for both games. We observed that JNC has significantly strong relationships while DNC did not.
+
+\begin{table}[h]
+\centering
+\caption{Correlation of Attributes against \textbf{DAU-Day7}}
+\label{table:correlation_table}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Jungle Cubes & Dragon Cubes\\ 
+\hline 
+Cohort Size & 0.6802 & 0.4655\\ 
+\hline 
+Day1 & -0.0054 & -0.2016\\ 
+\hline 
+Sessions & \textbf{0.8241} & 0.4261\\ 
+\hline 
+ActiveUsers & \textbf{0.9037} & 0.4630\\ 
+\hline 
+LevelPlayedEvents & 0.6817& 0.4226\\ 
+\hline 
+LevelSuccessEvents & \textbf{0.7279} & 0.4700\\ 
+\hline 
+LevelFailedEvents & 0.6217 & 0.3111\\ 
+\hline 
+MKTExpenses & \textbf{0.7349} & 0.3747\\ 
+\hline 
+TotalPurchases &\textbf{ 0.8507} & 0.1577\\ 
+\hline 
+AverageRating & 0.0803 & 0.1578\\ 
+\hline 
+CrashesANRDay1 & 0.6194 & 0.2668\\ 
+\hline 
+AvgSessionSeconds & -0.0595 & -0.2073\\
+\hline 
+MedianSessionSeconds & 0.1644 & -0.0938\\  
+\hline
+\end{tabular}
+\end{table} 
+
+JNC attributes yielded significantly higher positive correlation against \textbf{DAU-Day7}. There are four strong correlation values (in bold text)\footnote{We use 0.7 as threshold for indicating strong relationship.} while DNC do not have any. This indicates further proof that DNC do not yield any noticeable patterns due to its fair performance in the gaming market. JNC, on the other hand, already have a trend if we're going to use correlation as a measure.
+
+\subsection{Feature Selection}
+In order for our learning algorithms chosen to perform best, we filtered out the unneeded attributes primarily influenced by using established feature selection techniques. We use a wrapper scheme for feature selection for learning algorithms to perform best by removing unnecessary features. This technique is discussed in \cite{ref:wrappers_feature_selection}. We used a best-first search method together with the selected attribute evaluator. For each learning algorithm used in our study, different set of features are selected.
+
+Basing from the initial features "proposed" to be selected by using this scheme, we manually selected, or removed some features deemed significant by this technique. Solely relying on the wrapper scheme still induced noise on the final outcome of the model. We based our manual selection method through correlation analysis and repeated observations on how it affects the overall accuracy of the model.
+
+\subsection{M5Base}
+We attempt to use M5Base provided by WEKA which is based from \cite{ref:m5base} due to its combined nature to induce decision trees and output linear models at the leaves. This suits well for our study due to the numeric form of \textbf{DAU-Day7} and the ability to output a formula which can easily be used for marketing and business decision purposes.
+
+Table \ref{table:m5base_features} shows the selected features used for creating the model using M5Base. Notice the differences of features selected for both games.
+\begin{table}[h]
+\centering
+\caption{Selected features for M5Base}
+\label{table:m5base_features}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Jungle Cubes & Dragon Cubes\\ 
+\hline 
+Features & Cohort Size & CrashesANRDay1 
+\\& Day 1 & LevelFailedEvents 
+\\& LevelFailedEvents & LevelSuccessEvents
+\\& LevelSuccessEvents & Sessions
+\\& Sessions & MKTExpenses 
+\\& MKTExpenses & AvgSessionSeconds 
+\\& TotalPurchases & 
+\\& MedianSessionSeconds &\\ 
+\hline 
+
+\end{tabular}
+\end{table} 
+
