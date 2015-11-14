@@ -2,3 +2,17 @@
 This section contains the methodology and different classification techniques used to predict the value \textbf{DAU-Day7} from two datasets, JNC and DNC.
 
 On the business point of view, Jungle Cubes is a fairly successful game released commercially by Playlab Inc. due to its constant revenue despite having a small amount of users playing the game. On the other hand, Dragon Cubes have fairly considerable marketing expenses but did not reach the company's overall vision for the game. It also has seemingly random patterns as described by the marketing team. Here in this section, we attempt to uncover the plausible reason for this kind of outcome based from the dataset.
+
+\subsection{Methodology}
+Using the dataset we have extracted from JNC and DNC, we attempt to use this dataset as a whole and provide several models to attempt to predict \textbf{DAU-Day7}. Several machine learning techniques via WEKA were applied. We shall only discuss the outstanding set of models that perform best for our scenario.
+
+\subsubsection{Discretization of dataset for nominal use}
+We attempted to predict \textbf{DAU-Day7} in numeric and in nominal form. Our dataset by default uses numeric values for \textbf{DAU-Day7}. However, we wanted to observe if other classification techniques that uses nominal values for prediction may also provide significant results for prediction. Thus, we discretize our dataset to identify numeric ranges and group them into proper categories\footnote{Using WEKA, we determined informally that setting the bin group to 4, contributed to increasing the accuracy of the model. This means that four categories are identified for \textbf{DAU-Day7}. This is discussed on succeeding sections of this paper}. 
+
+Therefore, we use two types of dataset for both games; the numeric type and the nominal type.
+
+\subsubsection{Applying best models for real world use}
+Part of this study is to also apply the best prediction models to actual use in the industry. The analytics tool continuously tracks succeeding events from users. We identified a cutoff date for our dataset and succeeding records from both games will be used as test set\footnote{Our cutoff date is based on when we have finalized the attributes for the dataset. That is on September 11, 2015. We started the experiment after this date and succeeding dates in Flurry will be used as test set, which we ended collecting data on November 9, 2015.}.
+
+\subsection{Classification Techniques}
+Given a numeric and nominal type of datasets, we have a total of 4 datasets to test given that we have two games to consider. For numeric predictions of \textbf{DAU-Day7}, we choose to discuss the results of M5Base, REPTree, and Multilayer Perceptron due to their noticeable results. For the numeric type of datasets, we choose to use decision-tree induction (J48), and Naive Bayes. We performed feature selection and modified needed parameters for each training algorithm to increase the accuracy of the model. Specific details are discussed per each training technique in this paper.
