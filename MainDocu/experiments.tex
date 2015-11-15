@@ -117,4 +117,130 @@ Figure \ref{fig:error_m5base} shows the summary of error tendencies of both game
 \label{fig:error_m5base}
 \end{figure}
 
+\subsection{REPTree}
+We applied REPTree induction for JNC and DNC as it builds a regression tree that is also suitable for real world use. Examining the results, it did not perform on par with the outcome of M5Base. However, the outcome of this learning algorithm  has comparable results than any other learning algorithms we choose. We therefore, mention the results of the model. Fewer features were deemed significant by our feature selection method in REPTree as seen in Table \ref{table:reptree_features}.
+
+\begin{table}[h]
+\centering
+\caption{Selected features for REPTree}
+\label{table:reptree_features}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Jungle Cubes & Dragon Cubes\\ 
+\hline 
+Features & Cohort Size & CrashesANRDay1 
+\\& DailyAverageRating & LevelFailedEvents 
+\\& LevelFailedEvents & Sessions
+\\& MKTExpenses & MKTExpenses
+\\& MedianSessionSeconds &  
+\\& MKTExpenses &  
+\\ 
+\hline 
+\end{tabular}
+\end{table}
+
+\begin{table*}[h]
+\centering
+\caption{REPTree Results for JNC and DNC}
+\label{table:reptree_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+M5Base & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & 0.934 & 0.6565 & 0.6198 & 0
+\\Mean absolute error & 417.3018 & 262.0065 & 943.719 & 166.4048
+\\Root mean squared error & 602.4758 &  456.0032 & 1030.8327 & 177.1683
+\\Relative absolute error &28.8819\% & 63.7316\% & 23.0675\% & 19.2657\%
+\\Root relative squared error  & 35.8343\% & 75.1233\% & 25.0429\% & 20.4612\% 
+\\Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
+
+Table \ref{table:reptree_results} shows the summary of metrics for JNC and DNC. Figure \ref{fig:correl_reptree} and Figure \ref{fig:error_reptree} shows the graph of JNC and DNC's correlation coefficients and error tendencies respectively. Notice that JNC and DNC's results on cross-validation procedure did not really differ from the results using m5Base. However, attempting to apply this to our provided test set, we observed that values vary greatly.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{figures/REPTree_1.png} 
+\caption{Correlation coefficents for REPTree}
+\label{fig:correl_reptree}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{figures/REPTree_2.png} 
+\includegraphics[scale=0.4]{figures/REPTree_3.png} 
+\caption{Error tendencies for REPTree}
+\label{fig:error_reptree}
+\end{figure}
+
+Notice that on \textit{JNC-Test} tab, the error measures has significantly increased compared to m5Base. On the other hand, result in \textbf{DNC-Test} tab indicates that this learning algorithm faired better than m5Base when applied to practical use. However, we cannot fully recommend using REPTree for practical use since the correlation coefficient is zero. There is no real pattern between variables that affect \textbf{DAU-Day7} and may not fully predict \textbf{DAU-Day7} on various events.
+
+\subsection{Multilayer Perceptron}
+We attempted to use artificial neural network using Multilayer Perceptron as learning algorithm for predicting \textbf{DAU-Day7}; on the impression that this learning algorithm is flexible and has various parameters involved that we can continuously adjust to improve the accuracy of the model. In this subsection, we discuss briefly how we adjust the settings to generate the optimal network.
+
+Table \ref{table:m5base_features} shows the selected features for multilayer perceptron using our method specified earlier in this paper.
+
+\begin{table}[h]
+\centering
+\caption{Selected features for Multilayer Perceptron}
+\label{table:mp_features}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Jungle Cubes & Dragon Cubes\\ 
+\hline 
+Features & Cohort Size & Cohort Size 
+\\& MKTExpenses & MKTExpenses 
+\\& TotalPurchases &
+\\& MedianSessionSeconds &
+\\& AvgSessionSeconds &  
+\\ 
+\hline 
+\end{tabular}
+\end{table}
+
+We found that the number of hidden layers appropriate for this experiment is the total number of attributes and classes of our dataset\footnote{Actual count from best results has 6 hidden layers. Tally is retrieved after selecting features}. We relied on acceptable training time to modify the learning rate and the total number of epochs. Using the default values provided did not yield acceptable results. Modifying these said parameters\footnote{Learning rate is set to 0.001, number of epochs set to 5000.} noticeably increased the accuracy of the model that is comparable for this study.
+
+\begin{table*}[h]
+\centering
+\caption{Multilayer Perceptron Results for JNC and DNC}
+\label{table:mp_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Multilayer Perceptron & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & 0.9315 & 0.5197 & 0.0383 & 0.6587
+\\Mean absolute error & 457.19 & 277.4295 & 1530.9904 & 480.7897
+\\Root mean squared error & 608.1291 &  516.1081 & 1677.0443 & 483.6563
+\\Relative absolute error &31.6426\% & 67.4831\% & 37.4223\% & 55.664\%
+\\Root relative squared error  & 36.1706\% & 85.0251\% & 40.7419\% & 55.8576\% 
+\\Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
+
+Using cross-validation procedure, it can be observed that multilayer perceptron performed acceptably for JNC while DNC did not. The error measures for DNC for multilayer perceptron is the highest among the three numeric prediction models presented.
+
+Applying multilayer perceptron on our test set, observe that JNC have a very low correlation coefficient this time, which is very different from the outcome of REPTree and m5Base. Notice that the MAE and RMSE have significantly increased which makes multilayer perceptron less than ideal for practical use in JNC.
+
+Using multilayer perceptron for DNC, we can observe that the results from the test set closely resemble results from the cross-validation tests in m5Base. The RAE and RRSE is more than 50\% which may indicate that using multilayer perceptron is only halfway better than a simple predictor. 
+
+Table \ref{table:mp_results} shows the summary of the metrics using multilayer perceptron. Figure \ref{fig:correl_mp} and Figure \ref{fig:error_mp} shows the graph for the correlation coefficient and error metrics respectively.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{figures/MP_1.png} 
+\caption{Correlation coefficents for Multilayer Perceptron}
+\label{fig:correl_mp}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{figures/MP_2.png} 
+\includegraphics[scale=0.4]{figures/MP_3.png} 
+\caption{Error tendencies for Multilayer Perceptron}
+\label{fig:error_mp}
+\end{figure}
 
