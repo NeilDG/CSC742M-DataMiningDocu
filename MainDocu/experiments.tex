@@ -77,3 +77,44 @@ Features & Cohort Size & CrashesANRDay1
 \end{tabular}
 \end{table} 
 
+Applying the said features from Table \ref{table:m5base_features}, we attempt to use m5Base as predictor using the default configuration and resulted in the following measures seen in Table \ref{table:m5base_results}. JNC has significantly higher magnitude of error, referring to MAE and RMSE measures compared to DNC. However, the RAE and RRSE for JNC is significantly lower than DNC which means that the model of JNC seems to be more reliable than a simple predictor\footnote{Simple predictor is just using the mean as predicted value for DAU-Day7.}. If we take a look into their corresponding test sets, notice the significant change of metrics for both games.
+
+\begin{table*}[h]
+\centering
+\caption{m5Base Results for JNC and DNC}
+\label{table:m5base_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+M5Base & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & 0.9499 & 0.7673 & 0.9442 & 0.3731
+\\Mean absolute error & 363.3713 & 226.1379 & 380.6705 & 276.2044
+\\Root mean squared error & 522.864 &  390.7313 & 410.3039 & 285.4435
+\\Relative absolute error & 25.1493\% & 55.0067\% & 9.3048\% & 31.9779\%
+\\Root relative squared error  & 31.0991\% & 64.3702\% & 9.9679\% & 32.966\% 
+\\Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*} 
+
+Figure \ref{fig:correl_m5base} shows the correlation coefficent differences. Notice that JNC has high correlation. DNC has high correlation on its training set but using the test set, the correlation has dropped significantly which makes the model questionable for real world use.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{figures/m5Base_1.png} 
+\caption{Correlation coefficents for m5Base}
+\label{fig:correl_m5base}
+\end{figure}
+
+Figure \ref{fig:error_m5base} shows the summary of error tendencies of both games using m5Base. We can see that the MAE and RMSE of JNC is somewhat higher than DNC, but looking into RAE and RRSE, we see that JNC outperforms DNC by a huge difference. The prediction model becomes more reliable than a simple predictor for JNC's case.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{figures/m5Base_2.png} 
+\includegraphics[scale=0.4]{figures/m5Base_3.png} 
+\caption{Error tendencies for m5Base}
+\label{fig:error_m5base}
+\end{figure}
+
+
