@@ -52,6 +52,45 @@ In order for our learning algorithms chosen to perform best, we filtered out the
 
 Basing from the initial features "proposed" to be selected by using this scheme, we manually selected, or removed some features deemed significant by this technique. Solely relying on the wrapper scheme still induced noise on the final outcome of the model. We based our manual selection method through correlation analysis and repeated observations on how it affects the overall accuracy of the model.
 
+\begin{table*}
+\centering
+\caption{Summary of results per learning algorithm}
+\label{table:summary_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Metrics & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & m5Base:0.9499 & m5Base:0.7673 & m5Base:0.9442 & m5Base:0.3731
+\\						& REPTree:0.934 & REPTree:0.6565 & REPTree:0.6198 & REPTree: 0
+\\						& MP:0.9315 & MP:0.5197 & MP:0.0383 & MP:0.6587
+\\
+\hline
+Mean absolute error & m5Base:363.3713 & m5Base:226.1379 & m5Base:380.6705 & m5Base:276.2044
+\\						& REPTree:417.3018 & REPTree:262.0065 & REPTree:943.719 & REPTree: 166.4048
+\\						& MP:457.19 & MP:277.4295 & MP:1530.9904 & MP:480.7897
+\\
+\hline
+Root mean squared error & m5Base:522.864 & m5Base:390.7313 & m5Base:410.3039 & m5Base:285.4435
+\\						& REPTree:602.4758 & REPTree:456.0032 & REPTree:1030.8327 & REPTree: 177.1683
+\\						& MP:608.1291 & MP:516.1081 & MP:1677.0443 & MP:483.6563
+\\
+\hline
+Relative absolute error & m5Base:25.1493 & m5Base:55.0067 & m5Base:9.3048 & m5Base:31.9779
+\\						& REPTree:28.8819 & REPTree:63.7316 & REPTree:23.0675 & REPTree: 19.2657
+\\						& MP:31.6426 & MP:67.4831 & MP:37.4223 & MP:55.664
+\\
+\hline
+Root relative squared error  & m5Base:31.0991 & m5Base:64.3702 & m5Base:9.9679 & m5Base:32.966
+\\						& REPTree:35.8343 & REPTree:75.1233 & REPTree:25.0429 & REPTree: 20.4612
+\\						& MP:36.1706 & MP:85.0251 & MP:40.7419 & MP:55.8576
+\\
+\hline
+Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
+
 \subsection{M5Base}
 We attempt to use M5Base provided by WEKA which is based from \cite{ref:m5base} due to its combined nature to induce decision trees and output linear models at the leaves. This suits well for our study due to the numeric form of \textbf{DAU-Day7} and the ability to output a formula which can easily be used for marketing and business decision purposes.
 
@@ -77,26 +116,8 @@ Features & Cohort Size & CrashesANRDay1
 \end{tabular}
 \end{table} 
 
-Applying the said features from Table \ref{table:m5base_features}, we attempt to use m5Base as predictor using the default configuration and resulted in the following measures seen in Table \ref{table:m5base_results}. JNC has significantly higher magnitude of error, referring to MAE and RMSE measures compared to DNC. However, the RAE and RRSE for JNC is significantly lower than DNC which means that the model of JNC seems to be more reliable than a simple predictor\footnote{Simple predictor is just using the mean as predicted value for DAU-Day7.}. If we take a look into their corresponding test sets, notice the significant change of metrics for both games.
+Applying the said features from Table \ref{table:m5base_features}, we attempt to use m5Base as predictor using the default configuration and resulted in the following measures seen in Table \ref{table:summary_results}. JNC has significantly higher magnitude of error, referring to MAE and RMSE measures compared to DNC. However, the RAE and RRSE for JNC is significantly lower than DNC which means that the model of JNC seems to be more reliable than a simple predictor\footnote{Simple predictor is just using the mean as predicted value for DAU-Day7.}. If we take a look into their corresponding test sets, notice the significant change of metrics for both games.
 
-\begin{table*}[h]
-\centering
-\caption{m5Base Results for JNC and DNC}
-\label{table:m5base_results}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-M5Base & JNC & DNC & JNC-Test & DNC-Test \\ 
-\hline 
-Correlation coefficient & 0.9499 & 0.7673 & 0.9442 & 0.3731
-\\Mean absolute error & 363.3713 & 226.1379 & 380.6705 & 276.2044
-\\Root mean squared error & 522.864 &  390.7313 & 410.3039 & 285.4435
-\\Relative absolute error & 25.1493\% & 55.0067\% & 9.3048\% & 31.9779\%
-\\Root relative squared error  & 31.0991\% & 64.3702\% & 9.9679\% & 32.966\% 
-\\Total Number of Instances & 250 & 250 & 28 & 28
-\\
-\hline 
-\end{tabular}
-\end{table*} 
 
 Figure \ref{fig:correl_m5base} shows the correlation coefficent differences. Notice that JNC has high correlation. DNC has high correlation on its training set but using the test set, the correlation has dropped significantly which makes the model questionable for real world use.
 
@@ -139,26 +160,7 @@ Features & Cohort Size & CrashesANRDay1
 \end{tabular}
 \end{table}
 
-\begin{table*}[h]
-\centering
-\caption{REPTree Results for JNC and DNC}
-\label{table:reptree_results}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-M5Base & JNC & DNC & JNC-Test & DNC-Test \\ 
-\hline 
-Correlation coefficient & 0.934 & 0.6565 & 0.6198 & 0
-\\Mean absolute error & 417.3018 & 262.0065 & 943.719 & 166.4048
-\\Root mean squared error & 602.4758 &  456.0032 & 1030.8327 & 177.1683
-\\Relative absolute error &28.8819\% & 63.7316\% & 23.0675\% & 19.2657\%
-\\Root relative squared error  & 35.8343\% & 75.1233\% & 25.0429\% & 20.4612\% 
-\\Total Number of Instances & 250 & 250 & 28 & 28
-\\
-\hline 
-\end{tabular}
-\end{table*}
-
-Table \ref{table:reptree_results} shows the summary of metrics for JNC and DNC. Figure \ref{fig:correl_reptree} and Figure \ref{fig:error_reptree} shows the graph of JNC and DNC's correlation coefficients and error tendencies respectively. Notice that JNC and DNC's results on cross-validation procedure did not really differ from the results using m5Base. However, attempting to apply this to our provided test set, we observed that values vary greatly.
+Table \ref{table:summary_results} shows the summary of metrics for JNC and DNC. Figure \ref{fig:correl_reptree} and Figure \ref{fig:error_reptree} shows the graph of JNC and DNC's correlation coefficients and error tendencies respectively. Notice that JNC and DNC's results on cross-validation procedure did not really differ from the results using m5Base. However, attempting to apply this to our provided test set, we observed that values vary greatly.
 
 \begin{figure}[h]
 \centering
@@ -202,32 +204,13 @@ Features & Cohort Size & Cohort Size
 
 We found that the number of hidden layers appropriate for this experiment is the total number of attributes and classes of our dataset\footnote{Actual count from best results has 6 hidden layers. Tally is retrieved after selecting features}. We relied on acceptable training time to modify the learning rate and the total number of epochs. Using the default values provided did not yield acceptable results. Modifying these said parameters\footnote{Learning rate is set to 0.001, number of epochs set to 5000.} noticeably increased the accuracy of the model that is comparable for this study.
 
-\begin{table*}[h]
-\centering
-\caption{Multilayer Perceptron Results for JNC and DNC}
-\label{table:mp_results}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-Multilayer Perceptron & JNC & DNC & JNC-Test & DNC-Test \\ 
-\hline 
-Correlation coefficient & 0.9315 & 0.5197 & 0.0383 & 0.6587
-\\Mean absolute error & 457.19 & 277.4295 & 1530.9904 & 480.7897
-\\Root mean squared error & 608.1291 &  516.1081 & 1677.0443 & 483.6563
-\\Relative absolute error &31.6426\% & 67.4831\% & 37.4223\% & 55.664\%
-\\Root relative squared error  & 36.1706\% & 85.0251\% & 40.7419\% & 55.8576\% 
-\\Total Number of Instances & 250 & 250 & 28 & 28
-\\
-\hline 
-\end{tabular}
-\end{table*}
-
 Using cross-validation procedure, it can be observed that multilayer perceptron performed acceptably for JNC while DNC did not. The error measures for DNC for multilayer perceptron is the highest among the three numeric prediction models presented.
 
 Applying multilayer perceptron on our test set, observe that JNC have a very low correlation coefficient this time, which is very different from the outcome of REPTree and m5Base. Notice that the MAE and RMSE have significantly increased which makes multilayer perceptron less than ideal for practical use in JNC.
 
 Using multilayer perceptron for DNC, we can observe that the results from the test set closely resemble results from the cross-validation tests in m5Base. The RAE and RRSE is more than 50\% which may indicate that using multilayer perceptron is only halfway better than a simple predictor. 
 
-Table \ref{table:mp_results} shows the summary of the metrics using multilayer perceptron. Figure \ref{fig:correl_mp} and Figure \ref{fig:error_mp} shows the graph for the correlation coefficient and error metrics respectively.
+Table \ref{table:summary_results} shows the summary of the metrics using multilayer perceptron. Figure \ref{fig:correl_mp} and Figure \ref{fig:error_mp} shows the graph for the correlation coefficient and error metrics respectively.
 
 \begin{figure}[h]
 \centering
@@ -244,3 +227,11 @@ Table \ref{table:mp_results} shows the summary of the metrics using multilayer p
 \label{fig:error_mp}
 \end{figure}
 
+\subsection{Observations and Recommendations}
+We observed that according to our results, accuracies and features selected are different from each learning algorithm. Out of the three learning algorithms proposed, it seems that using m5Base as the prediction model yields the best possible outcome for both games. It favors more for JNC as the dataset being presented has very high correlation coefficient for \textbf{DAU-Day7} unlike DNC.
+
+While REPTree yields the lowest error rate when applied to DNC's test set, we do not recommend using REPTree for long-term use. The current situation of DNC in the gaming market has low acquisition rate, meaning that only a small amount of users get to download the game on a daily basis \footnote{We based this observation from our gathered test set and also observed its trend on Google Play Store.}. Furthermore, marketing expenses for DNC has stopped which may explain the low acquisition rate. This kind of scenario best fit the REPTree prediction model but somehow may not properly predict major changes in user acquisition. We therefore see m5Base as more fitting to consider the scenario where marketing expenses will increase, sudden change in session length or increase of user activity via triggering our custom events.
+
+While multilayer perceptron appear flexible, we do not recommend using multilayer perceptron as prediction model for both games. First, the dataset of both games are small-scale. We therefore need more data to see any clear observations that multilayer perceptron performs acceptably. Training time of the model also consumes more time and CPU performance than the other learning algorithms we've presented, which m5Base and REPTree performed better than multilayer perceptron. Notice that multilayer perceptron performed acceptably on cross-validation method but performed worse when applied to practical use (using test set).
+
+Out of all the learning algorithms used, we see that JNC yields acceptable results. It has low error rates and high correlation coefficient for most tests we've performed. This may justify the success of JNC in the commercial gaming market as we therefore see a trend in the data by just observing the correlation values. However, we do not justify that such trends contribute to the overall increase in daily active users. m5Base yields the highest correlation coefficient across our JNC tests and also produced low error rates. Using the model for practical use, we see that while there is little difference in MAE and RMSE, the RAE and RRSE of JNC yields only 9\%. This makes it suitable for real world use.

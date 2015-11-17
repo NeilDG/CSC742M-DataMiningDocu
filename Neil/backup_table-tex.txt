@@ -1,0 +1,57 @@
+\begin{table*}[h]
+\centering
+\caption{Multilayer Perceptron Results for JNC and DNC}
+\label{table:mp_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Multilayer Perceptron & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & 0.9315 & 0.5197 & 0.0383 & 0.6587
+\\Mean absolute error & 457.19 & 277.4295 & 1530.9904 & 480.7897
+\\Root mean squared error & 608.1291 &  516.1081 & 1677.0443 & 483.6563
+\\Relative absolute error &31.6426\% & 67.4831\% & 37.4223\% & 55.664\%
+\\Root relative squared error  & 36.1706\% & 85.0251\% & 40.7419\% & 55.8576\% 
+\\Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
+
+
+\begin{table*}[h]
+\centering
+\caption{REPTree Results for JNC and DNC}
+\label{table:reptree_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+M5Base & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & 0.934 & 0.6565 & 0.6198 & 0
+\\Mean absolute error & 417.3018 & 262.0065 & 943.719 & 166.4048
+\\Root mean squared error & 602.4758 &  456.0032 & 1030.8327 & 177.1683
+\\Relative absolute error &28.8819\% & 63.7316\% & 23.0675\% & 19.2657\%
+\\Root relative squared error  & 35.8343\% & 75.1233\% & 25.0429\% & 20.4612\% 
+\\Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
+
+\begin{table*}[h]
+\centering
+\caption{m5Base Results for JNC and DNC}
+\label{table:m5base_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+M5Base & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correlation coefficient & 0.9499 & 0.7673 & 0.9442 & 0.3731
+\\Mean absolute error & 363.3713 & 226.1379 & 380.6705 & 276.2044
+\\Root mean squared error & 522.864 &  390.7313 & 410.3039 & 285.4435
+\\Relative absolute error & 25.1493\% & 55.0067\% & 9.3048\% & 31.9779\%
+\\Root relative squared error  & 31.0991\% & 64.3702\% & 9.9679\% & 32.966\% 
+\\Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*} 
