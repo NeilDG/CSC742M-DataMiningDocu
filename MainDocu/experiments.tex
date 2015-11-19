@@ -3,6 +3,8 @@ This section contains the experiments performed and the results of the models us
 
 For the numeric type, we consider the following metrics for evaluation; correlation coefficient, mean absolute error (MAE), root mean squared error (RMSE), relative absolute error (RAE), and root relative squared error (RRSE). We discuss M5Base, REPTree and Multilayer Perceptron as separate subsections.
 
+For the nominal type, we consider the kappa statistic and F-score for discussion on both games.
+
 \subsection{Correlation Analysis}
 We measured correlation of attributes with \textbf{DAU-Day7} to determine which attributes should we include for training different prediction models. This was our first basis for feature selection. However, we did not solely rely on correlation analysis and considered other feature selection techniques\footnote{Various search and selection techniques are available in WEKA for feature selection.} to improve the accuracy of the models.
 
@@ -51,6 +53,8 @@ JNC attributes yielded significantly higher positive correlation against \textbf
 In order for our learning algorithms chosen to perform best, we filtered out the unneeded attributes primarily influenced by using established feature selection techniques. We use a wrapper scheme for feature selection for learning algorithms to perform best by removing unnecessary features. This technique is discussed in \cite{ref:wrappers_feature_selection}. We used a best-first search method together with the selected attribute evaluator. For each learning algorithm used in our study, different set of features are selected.
 
 Basing from the initial features "proposed" to be selected by using this scheme, we manually selected, or removed some features deemed significant by this technique. Solely relying on the wrapper scheme still induced noise on the final outcome of the model. We based our manual selection method through correlation analysis and repeated observations on how it affects the overall accuracy of the model.
+
+For the case of JNC and using decision-tree induction, we exclude this from our general feature selection scheme and used linear forward selection scheme as stated here in this paper \cite{ref:large_scale_attrib_selec_using_wrapp}. These contributed into a slightly higher accuracy rate for JNC using decision-tree induction.
 
 \begin{table*}
 \centering
@@ -227,11 +231,60 @@ Table \ref{table:summary_results} shows the summary of the metrics using multila
 \label{fig:error_mp}
 \end{figure}
 
+\subsection{Decision-tree induction}
+Using our nominal datasets for JNC and DNC, we explored how decision-tree induction will perform\footnote{Using J48 in WEKA}. 
+
+For the case of JNC, we concluded that 5 bins performed best across different test cases for discretization. Using 5 bins, we performed linear forward selection, which is exclusive for JNC and J48 experiment. Using this exclusive feature selection scheme, we managed to slightly have a better accuracy for this test. Our results for JNC on this type of learning algorithm indicates that it does not perform better than using learning algorithms for numeric predictions. For the case of DNC, we notice that using this scheme has resulted into more weight being put on the 1st bin (around 92\%), which made the discretized dataset severely biased. To counter this outcome, we used equal-frequency binning such that using 5 bins, the distribution of weight is even. Table \ref{table:j48_features} shows the features selected for both games using decision-tree induction.
+
+\begin{table}[h]
+\centering
+\caption{Selected features for J48}
+\label{table:j48_features}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Jungle Cubes & Dragon Cubes\\ 
+\hline 
+Features & Cohort Size & Day 1 
+\\& LevelPlayedEvents & LevelFailedEvents
+\\& Sessions & LevelSuccessEvents 
+\\& MKTExpenses & Sessions 
+\\& MedianSessionSeconds &MKTExpenses
+\\&  &AvgSessionSeconds\\ 
+\hline 
+\end{tabular}
+\end{table}
+
+Referring to Table \ref{table:j48_summary_results}, we can observe that for both JNC and DNC, the overall accuracy of the model does not really differ. While the discretization is different for both games, the overall accuracy are almost similar. Applying the model to our test set, around 7\% of the data in JNC were misclassified while DNC's test set achieved a 100.0\% correctly classification.
+
+For the case of JNC, observing the kappa statistic is only 0.6608 using cross-validation and only 0.4717 on its test set. F-measure is slightly higher on JNC's test set. With this outcome, we deduce that our test set might not be enough to further recommend using J48 model for actual use. We noticed that our test set do not cover all ranges for \textbf{DAU-Day7}.
+
+This goes the same for DNC but more extreme. The kappa statistic and F-measure are actually \textbf{misleading}. Since there is not much user activity and support for DNC\footnote{Major development for DNC has stopped according to Playlab Inc. and no further acquisition campaigns are implemented when this study was conducted.}, it follows that there will be a low amount of daily active users. On this given circumstance, our model predicted 100\% of such instances in the test set. We can only prove that the model successfully captures this kind of scenario but not on cases where the \textbf{DAU-Day7} is higher.
+
+\begin{table*}
+\centering
+\caption{Summary of results using decision-tree induction}
+\label{table:j48_summary_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Metrics & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correctly Classified Instances  & 74.8201\% & 72.8\%  & 92.8571\%  & 100.0\%\\
+Incorrectly Classified Instances & 25.1799\% & 27.2\% & 7.1429\% & 0.0\%\\
+Kappa statistic & 0.6608 & 0.63 & 0.4717 & 1.000 \\
+F-measure & 0.730 & 0.723 & 0.945 & 1.000 \\
+Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
+
 \subsection{Observations and Recommendations}
 We observed that according to our results, accuracies and features selected are different from each learning algorithm. Out of the three learning algorithms proposed, it seems that using m5Base as the prediction model yields the best possible outcome for both games. It favors more for JNC as the dataset being presented has very high correlation coefficient for \textbf{DAU-Day7} unlike DNC.
 
 While REPTree yields the lowest error rate when applied to DNC's test set, we do not recommend using REPTree for long-term use. The current situation of DNC in the gaming market has low acquisition rate, meaning that only a small amount of users get to download the game on a daily basis \footnote{We based this observation from our gathered test set and also observed its trend on Google Play Store.}. Furthermore, marketing expenses for DNC has stopped which may explain the low acquisition rate. This kind of scenario best fit the REPTree prediction model but somehow may not properly predict major changes in user acquisition. We therefore see m5Base as more fitting to consider the scenario where marketing expenses will increase, sudden change in session length or increase of user activity via triggering our custom events.
 
 While multilayer perceptron appear flexible, we do not recommend using multilayer perceptron as prediction model for both games. First, the dataset of both games are small-scale. We therefore need more data to see any clear observations that multilayer perceptron performs acceptably. Training time of the model also consumes more time and CPU performance than the other learning algorithms we've presented, which m5Base and REPTree performed better than multilayer perceptron. Notice that multilayer perceptron performed acceptably on cross-validation method but performed worse when applied to practical use (using test set).
+
+For the case of decision trees, we aim to provide this as a supplement alongside with the preferred prediction model. This works best with using M5Base as both of them are structured as trees. One could use M5Base to determine the regression formula and use the decision tree model to approximate \textbf{DAU-Day7} as additional clarification. Such cases wherein the prediction of M5Base agrees with the result of the decision tree model will make business decisions more reliable. However, DNC's case do not fully capture most of the cases using the decision tree model.
 
 Out of all the learning algorithms used, we see that JNC yields acceptable results. It has low error rates and high correlation coefficient for most tests we've performed. This may justify the success of JNC in the commercial gaming market as we therefore see a trend in the data by just observing the correlation values. However, we do not justify that such trends contribute to the overall increase in daily active users. m5Base yields the highest correlation coefficient across our JNC tests and also produced low error rates. Using the model for practical use, we see that while there is little difference in MAE and RMSE, the RAE and RRSE of JNC yields only 9\%. This makes it suitable for real world use.
