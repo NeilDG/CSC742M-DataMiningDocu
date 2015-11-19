@@ -6,7 +6,7 @@ Jungle Cubes and Dragon Cubes have an API installed that reports events to Flurr
 The manner of reporting events is pretty straightforward. Figure \ref{fig:flurry_flow} shows the overview of the process of events reporting to Flurry. When an application starts, the timestamp and location (if possible to extract) is recorded and sends the data to Flurry. This means that the attribute, \textit{Session}, is incremented. If this is a first-time launch, then the \textit{Install Date} is reported to Flurry\footnote{Install Date information can be found in the application settings. If for example, user installed the app on date A, and decided to play it 5 days after, the value will always be date A (not A + 5)}. 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{figures/FlurryFlow.png} 
+\includegraphics[scale=0.4]{figures/FlurryFlow.png} 
 \caption{Overview of how events are recorded and reported to Flurry within an application's lifecycle}
 \label{fig:flurry_flow}
 \end{figure}
@@ -16,8 +16,8 @@ We define custom events significant for our analysis and adjust various game fea
 
 \begin{figure*}[h]
 \centering
-\includegraphics[scale=0.2]{figures/dnc_win.png} 
-\includegraphics[scale=0.2]{figures/jnc_lose.png} 
+\includegraphics[scale=0.16]{figures/dnc_win.png} 
+\includegraphics[scale=0.16]{figures/jnc_lose.png} 
 \caption{Custom events defined in this paper are triggered when these screens are shown. DNC (left) shows a win result while JNC (right) shows a lose result.}
 \label{fig:win_lose_sample}
 \end{figure*}

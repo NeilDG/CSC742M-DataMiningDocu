@@ -127,7 +127,7 @@ Figure \ref{fig:correl_m5base} shows the correlation coefficent differences. Not
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{figures/m5Base_1.png} 
+\includegraphics[scale=0.3]{figures/m5Base_1.png} 
 \caption{Correlation coefficents for m5Base}
 \label{fig:correl_m5base}
 \end{figure}
@@ -136,8 +136,8 @@ Figure \ref{fig:error_m5base} shows the summary of error tendencies of both game
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{figures/m5Base_2.png} 
-\includegraphics[scale=0.4]{figures/m5Base_3.png} 
+\includegraphics[scale=0.3]{figures/m5Base_2.png} 
+\includegraphics[scale=0.3]{figures/m5Base_3.png} 
 \caption{Error tendencies for m5Base}
 \label{fig:error_m5base}
 \end{figure}
@@ -168,15 +168,15 @@ Table \ref{table:summary_results} shows the summary of metrics for JNC and DNC. 
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{figures/REPTree_1.png} 
+\includegraphics[scale=0.3]{figures/REPTree_1.png} 
 \caption{Correlation coefficents for REPTree}
 \label{fig:correl_reptree}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{figures/REPTree_2.png} 
-\includegraphics[scale=0.4]{figures/REPTree_3.png} 
+\includegraphics[scale=0.3]{figures/REPTree_2.png} 
+\includegraphics[scale=0.3]{figures/REPTree_3.png} 
 \caption{Error tendencies for REPTree}
 \label{fig:error_reptree}
 \end{figure}
@@ -218,15 +218,15 @@ Table \ref{table:summary_results} shows the summary of the metrics using multila
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{figures/MP_1.png} 
+\includegraphics[scale=0.3]{figures/MP_1.png} 
 \caption{Correlation coefficents for Multilayer Perceptron}
 \label{fig:correl_mp}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{figures/MP_2.png} 
-\includegraphics[scale=0.4]{figures/MP_3.png} 
+\includegraphics[scale=0.3]{figures/MP_2.png} 
+\includegraphics[scale=0.3]{figures/MP_3.png} 
 \caption{Error tendencies for Multilayer Perceptron}
 \label{fig:error_mp}
 \end{figure}
@@ -235,6 +235,24 @@ Table \ref{table:summary_results} shows the summary of the metrics using multila
 Using our nominal datasets for JNC and DNC, we explored how decision-tree induction will perform\footnote{Using J48 in WEKA}. 
 
 For the case of JNC, we concluded that 5 bins performed best across different test cases for discretization. Using 5 bins, we performed linear forward selection, which is exclusive for JNC and J48 experiment. Using this exclusive feature selection scheme, we managed to slightly have a better accuracy for this test. Our results for JNC on this type of learning algorithm indicates that it does not perform better than using learning algorithms for numeric predictions. For the case of DNC, we notice that using this scheme has resulted into more weight being put on the 1st bin (around 92\%), which made the discretized dataset severely biased. To counter this outcome, we used equal-frequency binning such that using 5 bins, the distribution of weight is even. Table \ref{table:j48_features} shows the features selected for both games using decision-tree induction.
+
+\begin{table*}[h]
+\centering
+\caption{Summary of results using decision-tree induction}
+\label{table:j48_summary_results}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Metrics & JNC & DNC & JNC-Test & DNC-Test \\ 
+\hline 
+Correctly Classified Instances  & 74.8201\% & 72.8\%  & 92.8571\%  & 100.0\%\\
+Incorrectly Classified Instances & 25.1799\% & 27.2\% & 7.1429\% & 0.0\%\\
+Kappa statistic & 0.6608 & 0.63 & 0.4717 & 1.000 \\
+F-measure & 0.730 & 0.723 & 0.945 & 1.000 \\
+Total Number of Instances & 250 & 250 & 28 & 28
+\\
+\hline 
+\end{tabular}
+\end{table*}
 
 \begin{table}[h]
 \centering
@@ -259,24 +277,6 @@ Referring to Table \ref{table:j48_summary_results}, we can observe that for both
 For the case of JNC, observing the kappa statistic is only 0.6608 using cross-validation and only 0.4717 on its test set. F-measure is slightly higher on JNC's test set. With this outcome, we deduce that our test set might not be enough to further recommend using J48 model for actual use. We noticed that our test set do not cover all ranges for \textbf{DAU-Day7}.
 
 This goes the same for DNC but more extreme. The kappa statistic and F-measure are actually \textbf{misleading}. Since there is not much user activity and support for DNC\footnote{Major development for DNC has stopped according to Playlab Inc. and no further acquisition campaigns are implemented when this study was conducted.}, it follows that there will be a low amount of daily active users. On this given circumstance, our model predicted 100\% of such instances in the test set. We can only prove that the model successfully captures this kind of scenario but not on cases where the \textbf{DAU-Day7} is higher.
-
-\begin{table*}
-\centering
-\caption{Summary of results using decision-tree induction}
-\label{table:j48_summary_results}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-Metrics & JNC & DNC & JNC-Test & DNC-Test \\ 
-\hline 
-Correctly Classified Instances  & 74.8201\% & 72.8\%  & 92.8571\%  & 100.0\%\\
-Incorrectly Classified Instances & 25.1799\% & 27.2\% & 7.1429\% & 0.0\%\\
-Kappa statistic & 0.6608 & 0.63 & 0.4717 & 1.000 \\
-F-measure & 0.730 & 0.723 & 0.945 & 1.000 \\
-Total Number of Instances & 250 & 250 & 28 & 28
-\\
-\hline 
-\end{tabular}
-\end{table*}
 
 \subsection{Observations and Recommendations}
 We observed that according to our results, accuracies and features selected are different from each learning algorithm. Out of the three learning algorithms proposed, it seems that using m5Base as the prediction model yields the best possible outcome for both games. It favors more for JNC as the dataset being presented has very high correlation coefficient for \textbf{DAU-Day7} unlike DNC.

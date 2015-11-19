@@ -2,9 +2,7 @@
 \section{Dataset and Information About Attributes}
 This section contains an overview of the dataset used for this paper. The manner of extraction is also discussed in this section. Attributes are defined as well. 
 
-There are two datasets available for research and both are considered for the empirical study. The DNC Dataset and the JNC Dataset. Both datasets have been compiled and retrieved from Flurry Analytics, a commercial analytics tool used by Playlab Inc to track user's behavior on their commercial mobile games. Some attributes were retrieved from Google Play Developer Console such as user's ratings and daily crash reports. The DNC dataset refers to the Dragon Cubes game while the JNC dataset refers to the Jungle Cubes game. Both dataset are restricted to Android platforms only.
-
-Table \ref{table:dataset_overview} shows the overview of the datasets used for the study.
+There are two datasets available for research and both are considered for the empirical study. The DNC Dataset and the JNC Dataset. Both datasets have been compiled and retrieved from Flurry Analytics, a commercial analytics tool used by Playlab Inc to track user's behavior on their commercial mobile games. Some attributes were retrieved from Google Play Developer Console such as user's ratings and daily crash reports. The DNC dataset refers to the Dragon Cubes game while the JNC dataset refers to the Jungle Cubes game. Both dataset are restricted to Android platforms only. Table \ref{table:dataset_overview} shows the overview of the datasets used for the study. Both datasets spans on a similar timeline, that is January 5 - September 11,2015.
 
 \begin{table}
 \centering
@@ -14,14 +12,12 @@ Table \ref{table:dataset_overview} shows the overview of the datasets used for t
 \hline 
 Dataset Filename & Game Title & Total Downloads & Overall Rating & Timeline of Dataset \\ 
 \hline
-DNC Dataset Android 0511-0911 & \includegraphics[scale=0.12]{figures/dnc_icon.jpg} Dragon Cubes & 50,000 - 100,000 & 4.2 out of 5 & January 5, 2015 - September 11, 2015 \\ 
+DNC Dataset Android 0511-0911 & \includegraphics[scale=0.1]{figures/dnc_icon.jpg} Dragon Cubes & 50,000 - 100,000 & 4.2 out of 5 & January 5, 2015 - September 11, 2015 \\ 
 \hline 
-JNC Dataset Android 0511-0911 & \includegraphics[scale=0.2]{figures/jnc_icon.jpg} Jungle Cubes & 100,000 - 500,000 & 4.3 out of 5 & January 5, 2015 - September 11, 2015 \\ 
+JNC Dataset Android 0511-0911 & \includegraphics[scale=0.15]{figures/jnc_icon.jpg} Jungle Cubes & 100,000 - 500,000 & 4.3 out of 5 & January 5, 2015 - September 11, 2015 \\ 
 \hline 
 \end{tabular}
 \end{table} 
-
-Both datasets spans on a similar timeline, that is May 11 - September 11,2015. A span of four months have been deemed sufficient for analysis and increasing the timespan no longer yields better results.
 
 \section{Attribute Information}
 This section discusses the attributes used for this study. These attributes have been gathered and selected from Flurry Analytics and Google Play Developer Console. 
@@ -32,7 +28,7 @@ The initial selection of dataset has been manually performed by the researchers 
 \item Install Date - Each instance in the dataset is organized by install date. This refers to the gregorian calendar date wherein an application is installed.
 \item Cohort Size - Refers to the total amount of users who have installed the application on the given install date.
 \item Day X - This represents the retention of the application given a certain date and cohort size. Installation date becomes day 0. Retention rate is the percentage of returning users on a specified install date. For example, day 1 has 40.75\% retention and 1200 cohort size. Therefore, 40.75\% of users have managed to return on day 1 (489 users in cohort size)
-\item CrashesANRDay1 - reality, crash reports come in a day after the specified install date. For example, May 11,2015 has 3 crash reports. This means that this value was only retrieved on May 12, 2015.This counts the total number of crashes and ANRs (application not responding) reports from the application. This has a negative impact for the user experience. In reality, crash reports come in a day after the specified install date. For example, May 11,2015 has 3 crash reports. This means that this value was only retrieved on May 12, 2015.
+\item CrashesANRDay1 - This counts the total number of crashes and ANRs (application not responding) reports from the application. This has a negative impact for the user experience. In reality, crash reports come in a day after the specified install date. For example, May 11,2015 has 3 crash reports. This means that this value was only retrieved on May 12, 2015.
 \item DailyAverageRating - This refers to the average rating by users who choose to rate the application (1 to 5, 5 being the highest) on a given date. Rating an application is not mandatory. This is a primary determination for virality. Similar to CrashesANRDay1, the tally comes in a day after the specified install date.
 \item LevelPlayedEvents - Refers to the accumulated event tally that is triggered when a user plays a level on the application. This is triggered upon tap of the 'Play' button. This event is reported no matter the outcome of the level being played.
 \item LevelSuccessEvents - Refers to the accumulated events that are triggered if a user successfully completes a level. This is triggered when the 'Win' screen is shown to the user.
